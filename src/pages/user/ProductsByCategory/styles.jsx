@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const HomeWrapper = styled.div`
+export const CategoryPageWrap = styled.div`
   display: flex;
   max-width: 1216px;
   min-height: 400px;
   margin: auto;
   margin-top: 100px;
+  padding: 12px;
 `;
 
 export const CardCustom = styled.div`
@@ -16,11 +17,6 @@ export const CardCustom = styled.div`
   min-height: 300px;
   max-height: 300px;
   background-color: #fff;
-`;
-
-export const ProductList = styled.div`
-  padding: 12px;
-  width: 100%;
 `;
 
 export const ImgProduct = styled.img`

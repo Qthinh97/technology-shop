@@ -1,0 +1,630 @@
+{
+  "users": [
+    {
+      "email": "thinh@gmail.com",
+      "password": "$2a$10$6F4LnLRyYhqM.dW0oFVDsuMFz9AUpmy5cTqI/QMquEiBtWl/raE52",
+      "phoneNumber": "0357734848",
+      "createdAt": 1682251641155,
+      "updatedAt": 1682251641155,
+      "id": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "CPU INTEL Core i5-12400 (6C/12T, 2.50 GHz - 4.40 GHz, 18MB) - 1700",
+      "Brand": "INTEL",
+      "price": 4890000,
+      "categoryId": "CPU",
+      "seriesId": "Core i5",
+      "image": "https://lh3.googleusercontent.com/wxwqYcEobO1IblY-dsEHmX1ilKSvQ2T28F0TnS7EI-dMslwjiBSivvjBAqu73-C1Oqd_cM7XYfMS_8Zerpvm67go4IZ9xcKA=w230-rw"
+    },
+    {
+      "id": 2,
+      "name": "CPU INTEL Core i7-12700F (12C/20T, 4.90 GHz, 25MB) - 1700",
+      "Brand": "INTEL",
+      "price": 7890000,
+      "categoryId": "CPU",
+      "seriesId": "Core i7",
+      "image": "https://lh3.googleusercontent.com/BQRSdeh_NbC8iZOpYPLLO9StN1Dfd6RoIAv-bDEFMe6aTcwfxw1e08dKgyisT2FdYnD-3F_eFzGd04ZUML5SGiasU86Lr46XOA=w500-rw"
+    },
+    {
+      "id": 3,
+      "name": "Card màn hình GIGABYTE Gigabyte GeForce RTX 3060 Ti EAGLE 8G (rev. 2.0) 8GB GDDR6 N306TEAGLE-8GD V2",
+      "Brand": "NVIDIA",
+      "price": 22590000,
+      "categoryId": "VGA",
+      "seriesId": "GeForce RTX 3060 Ti",
+      "image": "https://lh3.googleusercontent.com/TiNa2EX-KQrfRwxIbDbMwRawZY--kSnBUCB2n9xATzx7wX45HjEce4jOQ_w_Eh1LQOpETAHT4RkK-E5zT3qAZhTxawhBbMc=w500-rw"
+    },
+    {
+      "id": 4,
+      "name": "Card màn hình ASUS Dual GeForce RTX 2060 O6G EVO 6GB GDDR6 DUAL-RTX2060-O6G-EVO",
+      "Brand": "NVIDIA",
+      "price": 6390000,
+      "categoryId": "VGA",
+      "seriesId": "GeForce RTX 2060",
+      "image": "https://lh3.googleusercontent.com/3aBodHAMeSIBCpiqOoV--1IOJ1uiH_6q9saRZ17d64HOfAbhSK3XEg27ehVduuS-n8HRfVyQ09Dvrrsml2QNwU1_TyHVN-zGTw=w500-rw"
+    },
+    {
+      "id": 5,
+      "name": "Mainboard ASUS ROG STRIX Z790-F GAMING WIFI",
+      "Brand": "ASUS",
+      "price": 11890000,
+      "categoryId": "mainboard",
+      "seriesId": "ROG",
+      "image": "https://lh3.googleusercontent.com/gWr1tvohOjgaXxtKAgAvtaKFy1BKL_xvb5e-8ZfveaPXXg4_6LuNDDs2v1MXGT83B59uopXimVgjzJGO6vYPfCvgonh8GNw=w500-rw"
+    }
+  ],
+  "categories": [
+    {
+      "id": "CPU",
+      "name": "CPU - Bộ vi xử lý"
+    },
+    {
+      "id": "mainboard",
+      "name": "Mainboard - Bo mạch chủ"
+    },
+    {
+      "id": "VGA",
+      "name": "VGA - Card màn hình"
+    },
+    {
+      "id": "ram",
+      "name": "Ram"
+    },
+    {
+      "id": "HDD",
+      "name": "Ổ HDD"
+    },
+    {
+      "id": "SSD",
+      "name": "Ổ SSD"
+    },
+    {
+      "id": "nguon",
+      "name": "Nguồn"
+    },
+    {
+      "id": "case",
+      "name": "Vỏ Case"
+    },
+    {
+      "id": "tan-nhiet",
+      "name": "Tản nhiệt"
+    },
+    {
+      "id": "man-hinh-may-tinh",
+      "name": "Màn hình"
+    },
+    {
+      "id": "ban-phim",
+      "name": "Bàn phím"
+    },
+    {
+      "id": "chuot",
+      "name": "Chuột"
+    },
+    {
+      "id": "tai-nghe",
+      "name": "Tai nghe"
+    }
+  ],
+  "series": [
+    {
+      "id": "Core i3",
+      "name": "Core i3",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Core i5",
+      "name": "Core i5",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Core i7",
+      "name": "Core i7",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Core i9",
+      "name": "Core i9",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Pentium",
+      "name": "Pentium",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Ryzen 3",
+      "name": "Ryzen 3",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Ryzen 5",
+      "name": "Ryzen 5",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Ryzen 7",
+      "name": "Ryzen 7",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "Ryzen 9",
+      "name": "Ryzen 9",
+      "categoryId": "CPU"
+    },
+    {
+      "id": "AERO",
+      "name": "AERO",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "AORUS",
+      "name": "AORUS",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "BAZOOKA",
+      "name": "BAZOOKA",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "EXTREME",
+      "name": "EXTREME",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "Gaming",
+      "name": "Gaming",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "MEG",
+      "name": "MEG",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "MPG",
+      "name": "MPG",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "PRO",
+      "name": "PRO",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "PROART",
+      "name": "PROART",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "Phantom Gaming",
+      "name": "Phantom Gaming",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "Prime",
+      "name": "Prime",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "ROG",
+      "name": "ROG",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "Steel Legend",
+      "name": "Steel Legend",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "TOMAHAWK",
+      "name": "TOMAHAWK",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "TUF",
+      "name": "TUF",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "Taichi",
+      "name": "Taichi",
+      "categoryId": "mainboard"
+    },
+    {
+      "id": "GeForce GTX 1660",
+      "name": "GeForce GTX 1660",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce GTX 1660 Super",
+      "name": "GeForce GTX 1660 Super",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce GTX 1660Ti",
+      "name": "GeForce GTX 1660Ti",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 2060",
+      "name": "GeForce RTX 2060",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 2060 Super",
+      "name": "GeForce RTX 2060 Super",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 2080Ti",
+      "name": "GeForce RTX 2080Ti",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3050",
+      "name": "GeForce RTX 3050",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3060",
+      "name": "GeForce RTX 3060",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3060Ti",
+      "name": "GeForce RTX 3060Ti",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3070",
+      "name": "GeForce RTX 3070",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3080",
+      "name": "GeForce RTX 3080",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3080Ti",
+      "name": "GeForce RTX 3080Ti",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3090",
+      "name": "GeForce RTX 3090",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 3090Ti",
+      "name": "GeForce RTX 3090Ti",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 4070",
+      "name": "GeForce RTX 4070",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 4070Ti",
+      "name": "GeForce RTX 4070Ti",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 4080",
+      "name": "GeForce RTX 4080",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "GeForce RTX 4090",
+      "name": "GeForce RTX 4090",
+      "categoryId": "VGA"
+    },
+    {
+      "id": "4G",
+      "name": "4G",
+      "categoryId": "ram"
+    },
+    {
+      "id": "8G",
+      "name": "8G",
+      "categoryId": "ram"
+    },
+    {
+      "id": "16G",
+      "name": "16G",
+      "categoryId": "ram"
+    },
+    {
+      "id": "32G",
+      "name": "32G",
+      "categoryId": "ram"
+    },
+    {
+      "id": "64G",
+      "name": "64G",
+      "categoryId": "ram"
+    },
+    {
+      "id": "128G",
+      "name": "128G",
+      "categoryId": "ram"
+    },
+    {
+      "id": "1TB",
+      "name": "1TB",
+      "categoryId": "HDD"
+    },
+    {
+      "id": "2TB",
+      "name": "2TB",
+      "categoryId": "HDD"
+    },
+    {
+      "id": "4TB",
+      "name": "4TB",
+      "categoryId": "HDD"
+    },
+    {
+      "id": "6TB",
+      "name": "6TB",
+      "categoryId": "HDD"
+    },
+    {
+      "id": "8TB",
+      "name": "8TB",
+      "categoryId": "HDD"
+    },
+    {
+      "id": "10TB",
+      "name": "10TB",
+      "categoryId": "HDD"
+    },
+    {
+      "id": "256GB",
+      "name": "256GB",
+      "categoryId": "SDD"
+    },
+    {
+      "id": "500GB",
+      "name": "500GB",
+      "categoryId": "SDD"
+    },
+    {
+      "id": "512GB",
+      "name": "512GB",
+      "categoryId": "SDD"
+    },
+    {
+      "id": "1TB",
+      "name": "1TB",
+      "categoryId": "SSD"
+    },
+    {
+      "id": "2TB",
+      "name": "2TB",
+      "categoryId": "SSD"
+    },
+    {
+      "id": "4TB",
+      "name": "4TB",
+      "categoryId": "SSD"
+    },
+    {
+      "id": "6TB",
+      "name": "6TB",
+      "categoryId": "SSD"
+    },
+    {
+      "id": "8TB",
+      "name": "8TB",
+      "categoryId": "SSD"
+    },
+    {
+      "id": "10TB",
+      "name": "10TB",
+      "categoryId": "SSD"
+    },
+    {
+      "id": "400W",
+      "name": "400W",
+      "categoryId": "nguon"
+    },
+    {
+      "id": "600W",
+      "name": "600W",
+      "categoryId": "nguon"
+    },
+    {
+      "id": "700W",
+      "name": "700W",
+      "categoryId": "nguon"
+    },
+    {
+      "id": "750W",
+      "name": "750W",
+      "categoryId": "nguon"
+    },
+    {
+      "id": "1000W",
+      "name": "1000W",
+      "categoryId": "nguon"
+    },
+    {
+      "id": "1200W",
+      "name": "1200W",
+      "categoryId": "nguon"
+    },
+    {
+      "id": "kinh",
+      "name": "Kính",
+      "categoryId": "case"
+    },
+    {
+      "id": "nhom",
+      "name": "Nhôm",
+      "categoryId": "case"
+    },
+    {
+      "id": "nhua",
+      "name": "Nhựa",
+      "categoryId": "case"
+    },
+    {
+      "id": "SECC",
+      "name": "SECC",
+      "categoryId": "case"
+    },
+    {
+      "id": "SPCC",
+      "name": "SPCC",
+      "categoryId": "case"
+    },
+    {
+      "id": "thep",
+      "name": "Thép",
+      "categoryId": "case"
+    },
+    {
+      "id": "ASUS",
+      "name": "ASUS",
+      "categoryId": "tan-nhiet"
+    },
+    {
+      "id": "CORSAIR",
+      "name": "CORSAIR",
+      "categoryId": "tan-nhiet"
+    },
+    {
+      "id": "GIGABYTE",
+      "name": "GIGABYTE",
+      "categoryId": "tan-nhiet"
+    },
+    {
+      "id": "MSI",
+      "name": "MSI",
+      "categoryId": "tan-nhiet"
+    },
+    {
+      "id": "NOCTUA",
+      "name": "NOCTUA",
+      "categoryId": "tan-nhiet"
+    },
+    {
+      "id": "ID-COOLING",
+      "name": "ID-COOLING",
+      "categoryId": "tan-nhiet"
+    },
+    {
+      "id": "Alienware",
+      "name": "Alienware",
+      "categoryId": "man-hinh-may-tinh"
+    },
+    {
+      "id": "Elite Display",
+      "name": "Elite Display",
+      "categoryId": "man-hinh-may-tinh"
+    },
+    {
+      "id": "Gaming",
+      "name": "Gaming",
+      "categoryId": "man-hinh-may-tinh"
+    },
+    {
+      "id": "Modern",
+      "name": "Modern",
+      "categoryId": "man-hinh-may-tinh"
+    },
+    {
+      "id": "Nitro",
+      "name": "Nitro",
+      "categoryId": "man-hinh-may-tinh"
+    },
+    {
+      "id": "ROG",
+      "name": "ROG",
+      "categoryId": "man-hinh-may-tinh"
+    },
+    {
+      "id": "APPLE",
+      "name": "APPLE",
+      "categoryId": "ban-phim"
+    },
+    {
+      "id": "ASUS",
+      "name": "ASUS",
+      "categoryId": "ban-phim"
+    },
+    {
+      "id": "CORSAIR",
+      "name": "CORSAIR",
+      "categoryId": "ban-phim"
+    },
+    {
+      "id": "LOGITECH",
+      "name": "LOGITECH",
+      "categoryId": "ban-phim"
+    },
+    {
+      "id": "RAZER",
+      "name": "RAZER",
+      "categoryId": "ban-phim"
+    },
+    {
+      "id": "APPLE",
+      "name": "APPLE",
+      "categoryId": "chuot"
+    },
+    {
+      "id": "ASUS",
+      "name": "ASUS",
+      "categoryId": "chuot"
+    },
+    {
+      "id": "CORSAIR",
+      "name": "CORSAIR",
+      "categoryId": "chuot"
+    },
+    {
+      "id": "LOGITECH",
+      "name": "LOGITECH",
+      "categoryId": "chuot"
+    },
+    {
+      "id": "RAZER",
+      "name": "RAZER",
+      "categoryId": "chuot"
+    },
+    {
+      "id": "APPLE",
+      "name": "APPLE",
+      "categoryId": "tai-nghe"
+    },
+    {
+      "id": "ASUS",
+      "name": "ASUS",
+      "categoryId": "tai-nghe"
+    },
+    {
+      "id": "CORSAIR",
+      "name": "CORSAIR",
+      "categoryId": "tai-nghe"
+    },
+    {
+      "id": "LOGITECH",
+      "name": "LOGITECH",
+      "categoryId": "tai-nghe"
+    },
+    {
+      "id": "RAZER",
+      "name": "RAZER",
+      "categoryId": "tai-nghe"
+    }
+  ]
+}
