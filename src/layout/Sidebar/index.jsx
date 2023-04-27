@@ -39,10 +39,7 @@ function Sidebar() {
 
   return (
     <S.Sidebar>
-      <S.CustomCard>
-        <S.HeaderCard>Danh mục sản phẩm</S.HeaderCard>
-        {renderCategorySidebar}
-      </S.CustomCard>
+      <S.CustomCard>{renderCategorySidebar}</S.CustomCard>
     </S.Sidebar>
   );
 }

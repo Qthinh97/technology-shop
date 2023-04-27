@@ -12,7 +12,6 @@ function ProductsByCategoryPage() {
   const dispatch = useDispatch();
   const [filterParams, setFilterParams] = useState({
     seriesId: [],
-    searchKey: "",
   });
 
   const { productList } = useSelector((state) => state.product);
@@ -29,7 +28,7 @@ function ProductsByCategoryPage() {
       })
     );
     dispatch(getSeriesAction({ categoryId: params.categoryId }));
-  }, []);
+  }, [params.categoryId]);
 
   const handleShowMore = () => {
     dispatch(

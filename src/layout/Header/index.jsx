@@ -5,11 +5,39 @@ import { Dropdown } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { generatePath } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
-import { loguotAction } from "../../redux/action";
+import { loguotAction, getSearchListAction } from "../../redux/action";
+import { useState } from "react";
+import Sidebar from "../Sidebar";
 
 function Header() {
+  const [searchParams, setSearchParams] = useState({
+    searchKey: "",
+  });
+
+  const [showCategories, setShowCategories] = useState(false);
+  console.log(
+    "🚀 ~ file: index.jsx:17 ~ Header ~ showCategories:",
+    showCategories
+  );
+
   const { userInfo } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+
+  const handleInputSearch = (values) => {
+    setSearchParams({
+      ...searchParams,
+      searchKey: values,
+    });
+    dispatch(
+      getSearchListAction({
+        searchKey: values,
+      })
+    );
+  };
+
+  const toggleShowCategories = () => {
+    setShowCategories(!showCategories);
+  };
 
   return (
     <S.HeaderWrapper>
@@ -17,28 +45,37 @@ function Header() {
         <img src={Logo} alt="logo" style={{ height: "80%" }} />
         <img src={LogoShop} alt="ten shop" style={{ height: "20%" }} />
       </S.IconMain>
-      <S.CategoryProduct>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="22"
-          height="22"
-          style={{ marginRight: "4px" }}
-        >
-          <path
-            d="M8 4H21V6H8V4ZM4.5 6.5C3.67157 6.5 3 5.82843 3 5C3 4.17157 3.67157 3.5 4.5 3.5C5.32843 3.5 6 4.17157 6 5C6 5.82843 5.32843 6.5 4.5 6.5ZM4.5 13.5C3.67157 13.5 3 12.8284 3 12C3 11.1716 3.67157 10.5 4.5 10.5C5.32843 10.5 6 11.1716 6 12C6 12.8284 5.32843 13.5 4.5 13.5ZM4.5 20.4C3.67157 20.4 3 19.7284 3 18.9C3 18.0716 3.67157 17.4 4.5 17.4C5.32843 17.4 6 18.0716 6 18.9C6 19.7284 5.32843 20.4 4.5 20.4ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z"
-            fill="#000"
-          ></path>
-        </svg>
-        Danh mục sản phẩm
-      </S.CategoryProduct>
-      <S.CustomSearchHeader
-        placeholder="Nhập tên sản phẩm, từ khóa cần tìm..."
-        enterButton="Search"
-        size="large"
-      />
 
-      <S.CustomModalSearch></S.CustomModalSearch>
+      <S.CategoriesButtomWrapper>
+        <S.CategoriesButtom onClick={() => toggleShowCategories()}>
+          ☰ Danh mục sản phẩm
+        </S.CategoriesButtom>
+        {showCategories ? (
+          <div>
+            <S.ModalCategoriesHeader>
+              <Sidebar />
+            </S.ModalCategoriesHeader>
+          </div>
+        ) : null}
+      </S.CategoriesButtomWrapper>
+
+      <div
+        style={{
+          position: "relative",
+          maxWidth: "500px",
+          width: "100%",
+          margin: "0 10px",
+        }}
+      >
+        <S.CustomSearchHeader
+          placeholder="Nhập tên sản phẩm, từ khóa cần tìm..."
+          enterButton="Search"
+          size="large"
+          onChange={(e) => handleInputSearch(e.target.value)}
+        />
+
+        <S.CustomModalSearch></S.CustomModalSearch>
+      </div>
 
       <S.CartShopping>
         <svg

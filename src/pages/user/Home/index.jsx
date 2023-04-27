@@ -8,13 +8,28 @@ import { Input, Button, Card, Row, Col, Select, Checkbox } from "antd";
 
 import { PRODUCT_LIMIT } from "../../../constants/paging";
 import { getProductListAction } from "../../../redux/action";
-
-import logo from "../../../assets/images/icon/cpu.svg";
+import SlideShow from "../../../layout/SlideShow";
+import "react-slideshow-image/dist/styles.css";
 
 function HomePage() {
   const dispatch = useDispatch();
 
   const { productList } = useSelector((state) => state.product);
+
+  const slideImages = [
+    {
+      url: "https://lh3.googleusercontent.com/FXs0Avw0ggc2aVTIpcirJCIcA21CgXg0Y90mtKkftwmy7KRRcQhU7wcmyLw6q1pKDCvBkyQVgwZg7hywsJlN11TCJQB12Oem=w1920-rw",
+    },
+    {
+      url: "https://lh3.googleusercontent.com/vkMMX2cvl_1ii0c_vw5TGy4ixhRc-l7OlMWnmx4-oxquqHo_A9aET_lWxDmxbh-GMZTr3O5JS4kGNa0Ka7hcctxo2lj0xoUR=w1920-rw",
+    },
+    {
+      url: "https://lh3.googleusercontent.com/6oTamJC_m5UID0FaspcgE2OxonzDY3qxByN33paYAaX4uCBwCm-4yhRJz_7XDaTEUmWJ-dF1jNGQi-tuXijmZ9YhKQJn8zo=w1920-rw",
+    },
+    {
+      url: "https://lh3.googleusercontent.com/VJLVcyS_vKACJL1nK7QdWHQwfO_XixEBI9WLterUkYD_fR6KKZhwNl-yiI8ao1lio_bBerSB_wFZIT3EajO9mqWviom85ftR=w1920-rw",
+    },
+  ];
 
   useEffect(() => {
     dispatch(
@@ -85,28 +100,40 @@ function HomePage() {
 
   return (
     <S.HomeWrapper>
-      <Sidebar />
-      <S.ProductList>
-        <Select
-          style={{
-            width: "30%",
-            marginBottom: "20px",
-            display: "flex",
-          }}
-        >
-          <Select.Option value="desc">Giá tăng dần</Select.Option>
-          <Select.Option value="asc">Giá giảm dần</Select.Option>
-        </Select>
-        <Row gutter={[16, 16]}>{renderProductList}</Row>
-        {productList.data.length !== productList.meta.total && (
-          <Button
-            style={{ marginTop: "16px" }}
-            onClick={() => handleShowMore()}
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          maxHeight: "500px",
+          position: "relative",
+        }}
+      >
+        <SlideShow slideImages={slideImages} />
+      </div>
+      <S.ProductListWrapper>
+        <Sidebar />
+        <S.ProductList>
+          <Select
+            style={{
+              width: "30%",
+              marginBottom: "20px",
+              display: "flex",
+            }}
           >
-            Show more
-          </Button>
-        )}
-      </S.ProductList>
+            <Select.Option value="desc">Giá tăng dần</Select.Option>
+            <Select.Option value="asc">Giá giảm dần</Select.Option>
+          </Select>
+          <Row gutter={[16, 16]}>{renderProductList}</Row>
+          {productList.data.length !== productList.meta.total && (
+            <Button
+              style={{ marginTop: "16px" }}
+              onClick={() => handleShowMore()}
+            >
+              Show more
+            </Button>
+          )}
+        </S.ProductList>
+      </S.ProductListWrapper>
     </S.HomeWrapper>
   );
 }
