@@ -18,5 +18,4 @@ export const SlideSpan = styled.span`
 
 export const SlideWrapper = styled(Slide)`
   width: 100%;
-  height: 500px;
 `;

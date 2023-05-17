@@ -5,7 +5,7 @@ import { AUTH_ACTION, REQUEST, SUCCESS, FAIL } from "../constants";
 const initialState = {
   userInfo: {
     data: {},
-    load: false,
+    load: true,
     error: "",
   },
   loginData: { load: false, error: "" },

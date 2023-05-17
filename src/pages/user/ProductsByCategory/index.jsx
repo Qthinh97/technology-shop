@@ -12,6 +12,7 @@ function ProductsByCategoryPage() {
   const dispatch = useDispatch();
   const [filterParams, setFilterParams] = useState({
     seriesId: [],
+    sort: "",
   });
 
   const { productList } = useSelector((state) => state.product);
@@ -50,16 +51,17 @@ function ProductsByCategoryPage() {
     });
   }, [seriesList.data]);
 
-  const handleFilterSeries = (values) => {
+  const handleFilter = (key, values) => {
     setFilterParams({
       ...filterParams,
-      seriesId: values,
+      [key]: values,
     });
     dispatch(
       getProductListAction({
+        ...filterParams,
         page: 1,
         limit: PRODUCT_LIMIT,
-        seriesId: values,
+        [key]: values,
         categoryId: params.categoryId,
       })
     );
@@ -69,7 +71,7 @@ function ProductsByCategoryPage() {
     return productList.data.map((item) => {
       return (
         <Col key={item.id} xs={24} md={12} xl={6}>
-          <Link>
+          <Link to={generatePath(ROUTES.USER.DETAIL, { id: item.id })}>
             <S.CardCustom>
               <div>
                 <S.ImgProduct alt="logo" src={item.image} />
@@ -77,17 +79,17 @@ function ProductsByCategoryPage() {
               <div>
                 <p
                   style={{
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "rgb(130, 134, 158)",
                     fontWeight: 700,
                     marginTop: "4px",
                   }}
                 >
-                  {item.Brand}
+                  {item.brand}
                 </p>
                 <p
                   style={{
-                    fontSize: "12px",
+                    fontSize: "14px",
                     color: "#000",
                     fontWeight: 600,
                   }}
@@ -96,7 +98,7 @@ function ProductsByCategoryPage() {
                 </p>
                 <p
                   style={{
-                    fontSize: "15px",
+                    fontSize: "18px",
                     color: "rgb(20, 53, 195) ",
                     fontWeight: 700,
                     position: "absolute",
@@ -112,7 +114,6 @@ function ProductsByCategoryPage() {
       );
     });
   }, [productList.data]);
-
   return (
     <S.CategoryPageWrap>
       <Row gutter={[16, 16]} style={{ width: "100%" }}>
@@ -120,7 +121,7 @@ function ProductsByCategoryPage() {
           <Card title="Phân loại" size="small">
             <Checkbox.Group
               style={{ textAlign: "start" }}
-              onChange={(values) => handleFilterSeries(values)}
+              onChange={(values) => handleFilter("seriesId", values)}
             >
               <Row>{renderSeries}</Row>
             </Checkbox.Group>
@@ -129,9 +130,19 @@ function ProductsByCategoryPage() {
         <Col span={20}>
           <Row gutter={[16, 16]} style={{ marginBottom: 16 }}>
             <Col span={8}>
-              <Select style={{ width: "100%" }}>
-                <Select.Option value="desc">Giá tăng dần</Select.Option>
-                <Select.Option value="asc">Giá giảm dần</Select.Option>
+              <Select
+                onChange={(value) => handleFilter("sort", value)}
+                placeholder="Sắp xếp theo"
+                style={{
+                  width: "30%",
+                  marginBottom: "20px",
+                  display: "flex",
+                }}
+              >
+                <Select.Option value="name.desc">Tên A-Z</Select.Option>
+                <Select.Option value="name.asc">Tên Z-A</Select.Option>
+                <Select.Option value="price.asc">Giá tăng dần</Select.Option>
+                <Select.Option value="price.desc">Giá giảm dần</Select.Option>
               </Select>
             </Col>
           </Row>

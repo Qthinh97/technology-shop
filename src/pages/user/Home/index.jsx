@@ -7,6 +7,7 @@ import { Link, generatePath } from "react-router-dom";
 import { Input, Button, Card, Row, Col, Select, Checkbox } from "antd";
 
 import { PRODUCT_LIMIT } from "../../../constants/paging";
+import { ROUTES } from "../../../constants/routes";
 import { getProductListAction } from "../../../redux/action";
 import SlideShow from "../../../layout/SlideShow";
 import "react-slideshow-image/dist/styles.css";
@@ -15,6 +16,7 @@ function HomePage() {
   const dispatch = useDispatch();
 
   const { productList } = useSelector((state) => state.product);
+  const { userInfo } = useSelector((state) => state.auth);
 
   const slideImages = [
     {
@@ -38,14 +40,35 @@ function HomePage() {
         limit: PRODUCT_LIMIT,
       })
     );
+    console.log(userInfo.data.role);
   }, []);
 
   const handleShowMore = () => {
     dispatch(
       getProductListAction({
+        ...filterParams,
         page: productList.meta.page + 1,
         limit: PRODUCT_LIMIT,
         more: true,
+      })
+    );
+  };
+
+  const [filterParams, setFilterParams] = useState({
+    sort: "",
+  });
+
+  const handleFilter = (key, values) => {
+    setFilterParams({
+      ...filterParams,
+      [key]: values,
+    });
+    dispatch(
+      getProductListAction({
+        ...filterParams,
+        [key]: values,
+        page: 1,
+        limit: PRODUCT_LIMIT,
       })
     );
   };
@@ -54,7 +77,7 @@ function HomePage() {
     return productList.data.map((item) => {
       return (
         <Col key={item.id} xs={24} md={12} xl={6}>
-          <Link>
+          <Link to={generatePath(ROUTES.USER.DETAIL, { id: item.id })}>
             <S.CardCustom>
               <div>
                 <S.ImgProduct alt="logo" src={item.image} />
@@ -62,17 +85,17 @@ function HomePage() {
               <div>
                 <p
                   style={{
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "rgb(130, 134, 158)",
                     fontWeight: 700,
                     marginTop: "4px",
                   }}
                 >
-                  {item.Brand}
+                  {item.brand}
                 </p>
                 <p
                   style={{
-                    fontSize: "12px",
+                    fontSize: "14px",
                     color: "#000",
                     fontWeight: 600,
                   }}
@@ -81,7 +104,7 @@ function HomePage() {
                 </p>
                 <p
                   style={{
-                    fontSize: "15px",
+                    fontSize: "18px",
                     color: "rgb(20, 53, 195) ",
                     fontWeight: 700,
                     position: "absolute",
@@ -103,8 +126,6 @@ function HomePage() {
       <div
         style={{
           width: "100%",
-          height: "100vh",
-          maxHeight: "500px",
           position: "relative",
         }}
       >
@@ -114,14 +135,18 @@ function HomePage() {
         <Sidebar />
         <S.ProductList>
           <Select
+            onChange={(value) => handleFilter("sort", value)}
+            placeholder="Sắp xếp theo"
             style={{
               width: "30%",
               marginBottom: "20px",
               display: "flex",
             }}
           >
-            <Select.Option value="desc">Giá tăng dần</Select.Option>
-            <Select.Option value="asc">Giá giảm dần</Select.Option>
+            <Select.Option value="name.desc">Tên A-Z</Select.Option>
+            <Select.Option value="name.asc">Tên Z-A</Select.Option>
+            <Select.Option value="price.asc">Giá tăng dần</Select.Option>
+            <Select.Option value="price.desc">Giá giảm dần</Select.Option>
           </Select>
           <Row gutter={[16, 16]}>{renderProductList}</Row>
           {productList.data.length !== productList.meta.total && (

@@ -4,8 +4,8 @@ import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, generatePath } from "react-router-dom";
 
-import { getCategoryAction } from "../../redux/action";
-import { ROUTES } from "../../constants/routes";
+import { getCategoryAction } from "redux/action";
+import { ROUTES } from "constants/routes";
 
 function Sidebar() {
   const dispatch = useDispatch();
@@ -30,7 +30,8 @@ function Sidebar() {
               categoryId: item.id,
             })}
           >
-            {item.name}
+            <img width="22" height="22" src={item.icon} alt="electronics" />
+            <p style={{ marginLeft: 8 }}>{item.name}</p>
           </S.CategoryLink>
         </Col>
       );

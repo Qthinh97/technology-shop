@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
-import { Link, generatePath, useNavigate } from "react-router-dom";
+import { Link, Navigate, generatePath, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as S from "./styles";
@@ -14,6 +14,7 @@ function LoginPage() {
   const navigate = useNavigate();
 
   const { loginData } = useSelector((state) => state.auth);
+  const accessToken = localStorage.getItem("accessToken");
 
   useEffect(() => {
     if (loginData.error) {
@@ -37,10 +38,15 @@ function LoginPage() {
           email: values.email,
           password: values.password,
         },
-        callback: () => navigate(ROUTES.USER.HOME),
+        callback: (role) =>
+          navigate(
+            role === "admin" ? ROUTES.ADMIN.DASHBOARD : ROUTES.USER.HOME
+          ),
       })
     );
   };
+
+  if (accessToken) return <Navigate to={ROUTES.USER.HOME} />;
   return (
     <>
       <Header />

@@ -3,6 +3,9 @@ import productReducer from "./redux/reducers/products.reducer";
 import categoryReducer from "./redux/reducers/category.reducer";
 import seriesReducer from "./redux/reducers/series.reducer";
 import authReducer from "./redux/reducers/auth.reducer";
+import cartReducer from "./redux/reducers/cart.reducer";
+import orderReducer from "./redux/reducers/order.reducer";
+import locationReducer from "./redux/reducers/location.reducer";
 
 import createSagaMiddleware from "redux-saga";
 
@@ -16,6 +19,9 @@ const store = configureStore({
     product: productReducer,
     category: categoryReducer,
     series: seriesReducer,
+    cart: cartReducer,
+    order: orderReducer,
+    location: locationReducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({

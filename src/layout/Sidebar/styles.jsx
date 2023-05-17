@@ -5,18 +5,19 @@ export const Sidebar = styled.div`
   padding: 12px;
   text-align: start;
   font-size: 14px;
+  max-width: 225px;
 `;
 
 export const CategoryLink = styled(Link)`
-  display: block;
+  display: flex;
   color: #000;
   font-weight: 500;
-  padding: 6px 16px;
+  padding: 6px 12px;
   border-radius: 8px;
 
   &:hover {
     background-color: #f3f5fc;
-    color: #1435c3;
+    color: rgb(20, 53, 195);
   }
 
   &:active {
@@ -41,4 +42,8 @@ export const HeaderCard = styled.div`
   font-weight: 600;
   padding: 8px;
   border-bottom: 1px solid #ccc;
+`;
+
+export const ImgProduct = styled.img`
+  max-width: 22px;
 `;

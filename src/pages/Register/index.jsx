@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
-import { Link, generatePath, useNavigate } from "react-router-dom";
+import { Link, generatePath, useNavigate, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as S from "./styles";
@@ -14,6 +14,8 @@ function RegisterPage() {
   const navigate = useNavigate();
 
   const { registerData } = useSelector((state) => state.auth);
+
+  const accessToken = localStorage.getItem("accessToken");
 
   useEffect(() => {
     if (registerData.error) {
@@ -33,12 +35,14 @@ function RegisterPage() {
           phoneNumber: values.phoneNumber,
           email: values.email,
           password: values.password,
+          role: "user",
         },
         callback: () => navigate(ROUTES.LOGIN),
       })
     );
   };
 
+  if (accessToken) return <Navigate to={ROUTES.USER.HOME} />;
   return (
     <>
       <Header />

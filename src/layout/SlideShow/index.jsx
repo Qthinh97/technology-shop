@@ -8,16 +8,14 @@ const Slideshow = ({ slideImages }) => {
     alignItems: "center",
     justifyContent: "center",
     backgroundSize: "cover",
-    height: "500px",
+    width: "100%",
   };
 
   return (
     <S.SlideWrapper>
       {slideImages.map((slideImage, index) => (
         <div key={index}>
-          <div
-            style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
-          ></div>
+          <img {...divStyle} src={slideImage.url} alt="" />
         </div>
       ))}
     </S.SlideWrapper>

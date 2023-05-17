@@ -9,7 +9,7 @@ function* loginSaga(action) {
     const { data, callback } = action.payload;
     const result = yield axios.post("http://localhost:4000/login", data);
     yield localStorage.setItem("accessToken", result.data.accessToken);
-    yield callback();
+    yield callback(result.data.user.role);
     yield put({
       type: SUCCESS(AUTH_ACTION.LOGIN),
       payload: {
