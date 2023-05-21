@@ -5,7 +5,8 @@ import LogoShop from "../../assets/images/logo/NameShop.png";
 import { Button, Dropdown, Badge } from "antd";
 import { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { generatePath, Link, useNavigate } from "react-router-dom";
+import { generatePath, Link, useNavigate, Navigate } from "react-router-dom";
+import { UserOutlined } from "@ant-design/icons";
 import { ROUTES } from "../../constants/routes";
 import { PRODUCT_LIMIT } from "../../constants/paging";
 import {
@@ -18,8 +19,6 @@ import Sidebar from "../Sidebar";
 import EmptyCart from "../../assets/images/logo/empty_cart.png";
 
 function Header() {
-  const [searchParams, setSearchParams] = useState(""); // chua dung
-
   const [showCategories, setShowCategories] = useState(false);
 
   const navigate = useNavigate();
@@ -51,9 +50,6 @@ function Header() {
   const dispatch = useDispatch();
 
   const handleInputSearch = (values) => {
-    setSearchParams({
-      searchKey: values,
-    });
     if (values !== "") {
       dispatch(
         getSearchListAction({
@@ -72,7 +68,10 @@ function Header() {
   const renderCartListDropdown = useMemo(() => {
     return cartList.map((item) => {
       return (
-        <S.ProductCart to={generatePath(ROUTES.USER.DETAIL, { id: item.id })}>
+        <S.ProductCart
+          key={item.id}
+          to={generatePath(ROUTES.USER.DETAIL, { id: item.id })}
+        >
           <S.ImgCartItem src={item.product.img} />
           <S.InfoCart>
             <p className="nameCart">{item.product.name}</p>
@@ -89,9 +88,8 @@ function Header() {
   const renderProductList = useMemo(() => {
     return productListSearch.data.map((item) => {
       return (
-        <Link
+        <S.ItemListSearch
           to={generatePath(ROUTES.USER.DETAIL, { id: item.id })}
-          style={{ textDecoration: "none" }}
         >
           <div style={{ display: "flex", padding: "4px" }}>
             <S.ImgProduct alt="logo" src={item.image} />
@@ -119,16 +117,15 @@ function Header() {
               </p>
             </S.infoListSearch>
           </div>
-        </Link>
+        </S.ItemListSearch>
       );
     });
   }, [productListSearch.data]);
-  console.log(
-    "🚀 ~ file: index.jsx:111 ~ renderProductList ~ renderProductList:",
-    renderProductList
-  );
 
-  //Detect Outside Click for Any Element in ReactJS
+  const handleLogout = () => {
+    dispatch(loguotAction());
+    navigate(ROUTES.USER.HOME);
+  };
 
   return (
     <S.HeaderWrapper>
@@ -231,7 +228,7 @@ function Header() {
           ) : (
             <S.CartEmptyWrapper>
               <S.CartEmpty>
-                <img src={EmptyCart} style={{ width: "100%" }} />
+                <img src={EmptyCart} style={{ width: "100%" }} alt="empty" />
                 <p>Giỏ hàng chưa có sản phẩm nào</p>
                 <Button
                   onClick={() => navigate(ROUTES.USER.HOME)}
@@ -251,7 +248,7 @@ function Header() {
         </S.DropdownCartWrapper>
       </S.Dropdown>
 
-      <S.BuildPC>
+      <S.BuildPC to={generatePath(ROUTES.USER.BUILDPC)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -272,8 +269,22 @@ function Header() {
               {
                 key: 1,
                 label: (
-                  <span onClick={() => dispatch(loguotAction())}>Logout</span>
+                  <Link to={generatePath(ROUTES.ACCOUNT.ACCOUNTINFO)}>
+                    Thông tin tài khoản
+                  </Link>
                 ),
+              },
+              {
+                key: 2,
+                label: (
+                  <Link to={generatePath(ROUTES.ACCOUNT.ODERHISTORY)}>
+                    Quản Lý Đơn hàng
+                  </Link>
+                ),
+              },
+              {
+                key: 3,
+                label: <div onClick={() => handleLogout()}>Logout</div>,
               },
             ],
           }}
@@ -290,22 +301,12 @@ function Header() {
                 fill="#000"
               ></path>
             </svg>
-            <div>{userInfo.data.phoneNumber}</div>
+            <div>{userInfo.data.name}</div>
           </div>
         </Dropdown>
       ) : (
         <S.Register to={generatePath(ROUTES.LOGIN)}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="30"
-            height="30"
-          >
-            <path
-              d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"
-              fill="#000"
-            ></path>
-          </svg>
+          <UserOutlined style={{ fontSize: 30 }} />
           <div>Đăng ký / Đăng nhập</div>
         </S.Register>
       )}

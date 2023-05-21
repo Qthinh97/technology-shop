@@ -1,6 +1,6 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import {
   Form,
   Button,
@@ -16,11 +16,13 @@ import {
 } from "antd";
 
 import { ROUTES } from "../../../constants/routes";
+import { PRICE_SHIP, PRICE_TECHNIQUE } from "../../../constants/price";
 import {
   getCityListAction,
   getDistrictListAction,
   getWardListAction,
   orderProductAction,
+  deleteCartListAction,
 } from "../../../redux/action";
 
 import * as S from "./styles";
@@ -29,6 +31,11 @@ function CheckoutPage() {
   const [checkoutForm] = Form.useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [otherPrice, setOtherPrice] = useState({
+    t: false,
+    s: false,
+  });
 
   const { cityList, districtList, wardList } = useSelector(
     (state) => state.location
@@ -42,6 +49,18 @@ function CheckoutPage() {
     (total, item) => total + item.price * item.quantity,
     0
   );
+
+  const handleAddPrice = ([key], e) => {
+    setOtherPrice({
+      ...otherPrice,
+      [key]: e.target.checked,
+    });
+  };
+
+  const checkoutTotalPrice =
+    cartTotalPrice +
+    (cartTotalPrice <= 5000000 ? 55000 : 0) +
+    (otherPrice.t === true && cartTotalPrice <= 5000000 ? PRICE_TECHNIQUE : 0);
 
   const tableColumn = [
     {
@@ -80,18 +99,35 @@ function CheckoutPage() {
   }, []);
 
   const handleSubmitCheckoutForm = (values) => {
+    const checkoutTotalPrice =
+      cartTotalPrice +
+      (cartTotalPrice <= 5000000 ? 55000 : 0) +
+      (otherPrice.t === true && cartTotalPrice <= 5000000
+        ? PRICE_TECHNIQUE
+        : 0);
+
+    const { cityCode, districtCode, wardCode } = values;
+    const cityData = cityList.data.find((item) => item.code === cityCode);
+    const districtData = districtList.data.find(
+      (item) => item.code === districtCode
+    );
+    const wardData = wardList.data.find((item) => item.code === wardCode);
     dispatch(
       orderProductAction({
         data: {
           ...values,
+          cityName: cityData?.name,
+          districtName: districtData?.name,
+          wardName: wardData?.name,
           userId: userInfo.data.id,
-          totalPrice: cartTotalPrice,
+          totalPrice: checkoutTotalPrice,
           status: "pending",
         },
         products: cartList,
         callback: () => navigate(ROUTES.USER.HOME),
       })
     );
+    dispatch(deleteCartListAction());
   };
 
   const renderCityOptions = useMemo(() => {
@@ -124,6 +160,7 @@ function CheckoutPage() {
     });
   }, [wardList.data]);
 
+  if (cartList.length === 0) return <Navigate to={ROUTES.USER.HOME} />;
   return (
     <S.CheckoutWrapper>
       <h2 style={{ marginBottom: 24 }}>Thủ tục thanh toán</h2>
@@ -138,29 +175,27 @@ function CheckoutPage() {
       </Card>
 
       <S.OtherOption>
-        <Checkbox style={{ fontSize: 16 }}>Hỗ trợ kỹ thuật tận nơi</Checkbox>
-        <p
-          style={{
-            fontWeight: 700,
-            color: "#1435c3",
-            fontSize: 16,
-          }}
+        <Checkbox
+          style={{ fontSize: 16 }}
+          onChange={(e) => handleAddPrice("t", e)}
         >
-          Miễn phí
-        </p>
+          Hỗ trợ kỹ thuật tận nơi
+        </Checkbox>
+        <S.Price>
+          {cartTotalPrice <= 5000000
+            ? `${PRICE_TECHNIQUE.toLocaleString()}₫`
+            : "Miễn phí"}
+        </S.Price>
       </S.OtherOption>
 
       <S.OtherOption>
-        <Checkbox style={{ fontSize: 16 }}>Lắp đặt</Checkbox>
-        <p
-          style={{
-            fontWeight: 700,
-            color: "#1435c3",
-            fontSize: 16,
-          }}
+        <Checkbox
+          style={{ fontSize: 16 }}
+          onChange={(e) => handleAddPrice("s", e)}
         >
-          Miễn phí
-        </p>
+          Lắp đặt
+        </Checkbox>
+        <S.Price>Miễn phí</S.Price>
       </S.OtherOption>
 
       <S.CartPaymentWrapper>
@@ -168,8 +203,33 @@ function CheckoutPage() {
           <h3>Tổng tiền</h3>
           <S.TotalMoney>
             <p>Tổng tạm tính</p>
-            <p>{cartTotalPrice.toLocaleString()}₫</p>
+            <S.Price>{cartTotalPrice.toLocaleString()}₫</S.Price>
           </S.TotalMoney>
+          {cartTotalPrice <= 5000000 ? (
+            <S.TotalMoney>
+              <p>Phí vận chuyển</p>
+              <S.Price>{PRICE_SHIP.toLocaleString()}₫</S.Price>
+            </S.TotalMoney>
+          ) : null}
+
+          {otherPrice.t ? (
+            <S.TotalMoney>
+              <p>Hỗ trợ kỹ thuật tận nơi</p>
+              <S.Price>
+                {cartTotalPrice <= 5000000
+                  ? `${PRICE_TECHNIQUE.toLocaleString()}₫`
+                  : "Miễn phí"}
+              </S.Price>
+            </S.TotalMoney>
+          ) : null}
+
+          {otherPrice.s ? (
+            <S.TotalMoney>
+              <p>Lắp đặt</p>
+              <S.Price>Miễn phí</S.Price>
+            </S.TotalMoney>
+          ) : null}
+
           <S.TotalMoney>
             <p>Thành tiền</p>
             <div
@@ -177,14 +237,14 @@ function CheckoutPage() {
                 textAlign: "end",
               }}
             >
-              <p
+              <S.Price
                 style={{
-                  fontWeight: 700,
-                  color: "#1435c3",
+                  fontSize: 20,
+                  color: "red",
                 }}
               >
-                {cartTotalPrice.toLocaleString()}₫
-              </p>
+                {checkoutTotalPrice.toLocaleString()}₫
+              </S.Price>
               <p
                 style={{
                   fontSize: "12px",

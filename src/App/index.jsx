@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 
 import UserLayout from "../layout/userLayout";
 import AdminLayout from "../layout/AdminLayout";
+import AccountLayout from "../layout/AccountLayout";
 
 import DashboardPage from "../pages/admin/Dashboard";
 import ProductManagementPage from "../pages/admin/ProductManagement";
@@ -19,6 +20,11 @@ import RegisterPage from "../pages/Register";
 import ProductsByCategoryPage from "../pages/user/ProductsByCategory";
 import CartPage from "../pages/user/Cart";
 import CheckoutPage from "../pages/user/Checkout";
+import BuildPCPage from "../pages/user/BuildPC";
+import SearchPage from "../pages/user/Search";
+import AccountPage from "../pages/account/InfoAccount";
+import OderHistory from "../pages/account/OderHistory";
+
 import { ROUTES } from "../constants/routes";
 import { getUserInfoAction } from "../redux/action/";
 
@@ -31,10 +37,6 @@ function App() {
     const accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
       const tokenData = jwtDecode(accessToken);
-      console.log(
-        "🚀 ~ file: index.jsx:24 ~ useEffect ~ tokenData:",
-        tokenData
-      );
       dispatch(getUserInfoAction({ id: tokenData.sub }));
     }
   }, []);
@@ -67,6 +69,14 @@ function App() {
           <Route path={ROUTES.USER.DETAIL} element={<DetailPage />} />
           <Route path={ROUTES.USER.CART_LIST} element={<CartPage />} />
           <Route path={ROUTES.USER.CHECKOUT} element={<CheckoutPage />} />
+          <Route path={ROUTES.USER.BUILDPC} element={<BuildPCPage />} />
+          <Route path={ROUTES.USER.DETAIL} element={<DetailPage />} />
+          {/* <Route path={ROUTES.USER.SEARCH} element={<SearchPage />} /> */}
+          SearchPage
+        </Route>
+        <Route element={<AccountLayout />}>
+          <Route path={ROUTES.ACCOUNT.ACCOUNTINFO} element={<AccountPage />} />
+          <Route path={ROUTES.ACCOUNT.ODERHISTORY} element={<OderHistory />} />
         </Route>
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
         <Route path={ROUTES.REGISTER} element={<RegisterPage />} />

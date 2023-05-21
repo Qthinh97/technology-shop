@@ -5,6 +5,8 @@ export const LoginWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  padding: auto;
+  height: calc(100vh - 100px);
 `;
 
 export const LoginContainer = styled.div`

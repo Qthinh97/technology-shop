@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import * as S from "./styles";
 import Header from "../../layout/Header";
+import Footer from "../../layout/Footer";
+
 import { ROUTES } from "../../constants/routes";
 import { loginAction } from "../../redux/action";
 
@@ -104,6 +106,7 @@ function LoginPage() {
           </Form>
         </S.LoginContainer>
       </S.LoginWrapper>
+      <Footer />
     </>
   );
 }

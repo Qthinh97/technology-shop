@@ -5,6 +5,7 @@ export const RegisterWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  padding: 80px 0 80px;
 `;
 
 export const RegisterContainer = styled.div`

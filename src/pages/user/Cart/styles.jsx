@@ -10,6 +10,11 @@ export const CartWrapper = styled.div`
   padding: 24px;
 `;
 
+export const CartContainer = styled.div`
+  max-width: 1232px;
+  width: 100%;
+`;
+
 export const HeaderWrapper = styled(Row)``;
 
 export const CartContentWrapper = styled(Row)`

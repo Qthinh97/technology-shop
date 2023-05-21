@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Form, Input, Select, InputNumber, Space, Upload } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
 import ReactQuill from "react-quill";
 
 import { ROUTES } from "constants/routes";
@@ -13,17 +12,16 @@ import {
 } from "../../../redux/action";
 
 import * as S from "./styles";
-import { values } from "json-server-auth";
 
 const CreateProductPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const [categoryId, setCategoryId] = useState("");
-  // console.log(
-  //   "🚀 ~ file: index.jsx:22 ~ CreateProductPage ~ categoryId:",
-  //   categoryId
-  // );
+  const [categoryId, setCategoryId] = useState("");
+  console.log(
+    "🚀 ~ file: index.jsx:22 ~ CreateProductPage ~ categoryId:",
+    categoryId
+  );
 
   const [createForm] = Form.useForm();
 
@@ -42,37 +40,13 @@ const CreateProductPage = () => {
 
   useEffect(() => {
     dispatch(getCategoryAction({ page: 1 }));
-    // dispatch(getSeriesAction());
-  }, []);
-
-  // const convertImageToBase64 = (file) => {
-  //   return new Promise((resolve, reject) => {
-  //     const reader = new FileReader();
-  //     reader.readAsDataURL(file);
-  //     reader.onload = () => resolve(reader.result);
-  //     reader.onerror = (error) => reject(error);
-  //   });
-  // };
+    dispatch(getSeriesAction({ categoryId }));
+  }, [categoryId]);
 
   const handleCreateProduct = (values) => {
-    const { productValues } = values;
-    console.log(
-      "🚀 ~ file: index.jsx:46 ~ handleCreateProduct ~ productValues:",
-      productValues
-    );
-    // const newImages = [];
-    // for (let i = 0; i < images.length; i++) {
-    //   const imgBase64 = await convertImageToBase64(images[i].originFileObj);
-    //   await newImages.push({
-    //     name: images[i].name,
-    //     type: images[i].type,
-    //     thumbUrl: images[i].thumbUrl,
-    //     url: imgBase64,
-    //   });
-    // }
     dispatch(
       createProductAction({
-        data: productValues,
+        data: values,
         callback: () => navigate(ROUTES.ADMIN.PRODUCT_MANAGEMENT),
       })
     );
@@ -128,15 +102,25 @@ const CreateProductPage = () => {
           name="categoryId"
           rules={[{ required: true, message: "Required!" }]}
         >
-          <Select>{renderProductOptions}</Select>
+          <Select onChange={(values) => setCategoryId(values)}>
+            {renderProductOptions}
+          </Select>
         </Form.Item>
         <Form.Item
-          label="Seri"
-          name="SeriId"
+          label="Series"
+          name="seriesId"
           rules={[{ required: true, message: "Required!" }]}
         >
           <Select>{renderSeriesOptions}</Select>
         </Form.Item>
+        <Form.Item
+          label="Brand"
+          name="brand"
+          rules={[{ required: true, message: "Required!" }]}
+        >
+          <Input />
+        </Form.Item>
+
         <Space>
           <Form.Item
             label="Price"
@@ -151,9 +135,18 @@ const CreateProductPage = () => {
           </Form.Item>
           <span>VND</span>
         </Space>
+
         <Form.Item
-          label="Images"
-          name="images"
+          label="Specifications"
+          name="specifications"
+          rules={[{ required: true, message: "Required!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Image"
+          name="image"
           rules={[{ required: true, message: "Required!" }]}
         >
           <Input />

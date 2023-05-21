@@ -2,135 +2,206 @@
   "users": [
     {
       "email": "thinhadmin@gmail.com",
-      "password": "$2a$10$Pmi7HhKhbNrk8A5GdO/IQurFc2nMsyiokDKg6uX/soyDL29PIWn1e",
-      "phoneNumber": "0357734848",
+      "password": "$2a$10$ANquBCJBJzZ9N8KeG7WkVuH.0nvD0cLSK92WVw4JFgYwuoQ5aocqK",
+      "name": "thinhadmin",
+      "phoneNumber": "0357734747",
       "role": "admin",
-      "createdAt": 1684205676206,
-      "updatedAt": 1684205676207,
+      "createdAt": 1684394217932,
+      "updatedAt": 1684394217933,
       "id": 1
     },
     {
-      "email": "thinh@gnaiml.com",
-      "password": "$2a$10$IeqENbsun87SxX4Fz7T5vuaegN18wUJDjECbJOlYBW4wt9pB9A8/a",
-      "phoneNumber": "0357774747",
+      "email": "thinh@gmail.com",
+      "password": "$2a$10$gR8uA0Whl14li8Hgi7iZKeLjRkBVZiFdT8kVJd1AbrE6TvHL.C2NG",
+      "name": "thinh",
+      "phoneNumber": "0357762626",
       "role": "user",
-      "createdAt": 1684205729578,
-      "updatedAt": 1684205729578,
+      "createdAt": 1684394264670,
+      "updatedAt": 1684394264671,
       "id": 2
     }
   ],
+  "userInfo": [],
   "products": [
     {
+      "name": "CPU INTEL Core i9-13900K (24C/32T, 3 GHz - 5.8 GHz, 36MB) - 1700",
+      "categoryId": "CPU",
+      "seriesId": "Core i9",
+      "brand": "INTEL",
+      "price": 15990000,
+      "specifications": "Socket: 1700, Intel Core thế hệ thứ 13/Tốc độ: 3 GHz - 5.8 GHz (24nhân, 32 luồng)/Bộ nhớ đệm: 36MB/Chip đồ họa tích hợp: Intel UHD Graphics 770",
+      "image": "https://lh3.googleusercontent.com/8ZgtSFfvzhSbOiKX7EQ69kQbzdzklyA3gE3F9qv3oloqqaqjCs9iX1li7ZIq7wHSyctbZLdjpAfCjJAiEzLy-arb-dPcAmY4KA=w500-rw",
+      "content": "<p>Đang cập nhật</p>",
+      "createdAt": 1684408642933,
+      "updatedAt": 1684408642934,
       "id": 1,
-      "name": "CPU INTEL Core i5-12400 (6C/12T, 2.50 GHz - 4.40 GHz, 18MB) - 1700",
-      "brand": "INTEL",
-      "price": 4890000,
-      "categoryId": "CPU",
-      "seriesId": "Core i5",
-      "image": "https://lh3.googleusercontent.com/wxwqYcEobO1IblY-dsEHmX1ilKSvQ2T28F0TnS7EI-dMslwjiBSivvjBAqu73-C1Oqd_cM7XYfMS_8Zerpvm67go4IZ9xcKA=w230-rw"
+      "otherInfo": {
+        "brand": "INTEL",
+        "guarantee": 36,
+        "cpu": "Core i9-13900K",
+        "series": "Core i9",
+        "socket": 1700,
+        "totalCores": 24,
+        "totalThreads": 32,
+        "codeName": "Raptor Lake-S",
+        "generation": "Intel Core thế hệ thứ 13",
+        "turboFrequency": "3 GHz - 5.8 GHz",
+        "cache": "36MB",
+        "processorGraphics": "Intel UHD Graphics 770",
+        "tdp": "125W",
+        "memoryTypes": "DDR4/DDR5 Dual channel"
+      }
     },
     {
-      "id": 2,
-      "name": "CPU INTEL Core i7-12700F (12C/20T, 4.90 GHz, 25MB) - 1700",
-      "brand": "INTEL",
-      "price": 7890000,
-      "categoryId": "CPU",
-      "seriesId": "Core i7",
-      "image": "https://lh3.googleusercontent.com/BQRSdeh_NbC8iZOpYPLLO9StN1Dfd6RoIAv-bDEFMe6aTcwfxw1e08dKgyisT2FdYnD-3F_eFzGd04ZUML5SGiasU86Lr46XOA=w500-rw"
-    },
-    {
-      "id": 3,
-      "name": "Card màn hình GIGABYTE Gigabyte GeForce RTX 3060 Ti EAGLE 8G (rev. 2.0) 8GB GDDR6 N306TEAGLE-8GD V2",
-      "brand": "NVIDIA",
-      "price": 22590000,
-      "categoryId": "VGA",
-      "seriesId": "GeForce RTX 3060 Ti",
-      "image": "https://lh3.googleusercontent.com/TiNa2EX-KQrfRwxIbDbMwRawZY--kSnBUCB2n9xATzx7wX45HjEce4jOQ_w_Eh1LQOpETAHT4RkK-E5zT3qAZhTxawhBbMc=w500-rw"
-    },
-    {
-      "id": 4,
-      "name": "Card màn hình ASUS Dual GeForce RTX 2060 O6G EVO 6GB GDDR6 DUAL-RTX2060-O6G-EVO",
-      "brand": "NVIDIA",
-      "price": 6390000,
+      "name": "Card màn hình GIGABYTE GeForce RTX 2060 D6 6G 6GB GDDR6 (GV-N2060D6-6GD)",
       "categoryId": "VGA",
       "seriesId": "GeForce RTX 2060",
-      "image": "https://lh3.googleusercontent.com/3aBodHAMeSIBCpiqOoV--1IOJ1uiH_6q9saRZ17d64HOfAbhSK3XEg27ehVduuS-n8HRfVyQ09Dvrrsml2QNwU1_TyHVN-zGTw=w500-rw"
+      "brand": "GIGABYTE",
+      "price": 7199000,
+      "specifications": "- Chip đồ họa: GeForce RTX 2060/- Bộ nhớ: 6GB GDDR6 (192-bit)/- Core Clock: 1680 MHz/- Nguồn phụ: 1 x 8-pin",
+      "image": "https://lh3.googleusercontent.com/cCdFfMDBxVuk1n5pRjkhzK3qe7Mx7l64ZVZysdwAZvS153c-dzRoGHgnT4Eq7n0RIv6rvbAj_GI2I76UTuIet-IaK4oHr78=w500-rw",
+      "content": "<h2><span style=\"color: rgb(13, 110, 253);\">Card màn hình</span>&nbsp;GIGABYTE GeForce RTX 2060 D6 6G mang thiết kế ấn tượng, độc đáo, đa cổng kết nối, hoạt động mạnh mẽ, tản nhiệt tốt, sử dụng chipset từ thương hiệu nổi tiếng NIVIDIA xử lý hình ảnh đồ họa tốt, phù hợp với những ai làm thiết kế đang có nhu cầu nâng cấp PC của mình.</h2><h3><strong>Thiết kế độc đáo với hệ thống làm mát WINDFORCE 2X độc đáo</strong></h3><p>Có thể thấy, GIGABYTE GeForce RTX 2060 D6 6G mang thiết kế độc đáo được trang bị tấm bảo vệ mặt sau, với kích thước 22.6cm x 12.2cm x 4.1cm (dài x rộng x cao) cùng 2 quạt làm mát, màu đen tuyền sang trọng, hiện đại.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/5/5/20210505_e2175988-9752-4524-a400-ba8c3e56e6e6.png\" alt=\"VGA Gigabyte GeForce RTX 2060 D6 6G (GV-N2060D6-6GD) | Hệ thống làm mát 2X Windforce\"></p><p>Đặc biệt, GIGABYTE GeForce RTX 2060 D6 6G có hệ thống làm mát WINDFORCE 2X với hai quạt cánh độc đáo 90mm, quay luân phiên, một ống dẫn nhiệt bằng đồng composite chạm trực tiếp vào GPU và quạt hoạt động 3D, cùng nhau mang lại khả năng tản nhiệt hiệu quả cho hiệu suất cao hơn ở nhiệt độ thấp hơn.</p><p>Card màn hình GIGABYTE GeForce RTX 2060 D6 6G có lưỡi quạt độc đáo, hoạt động 3D luồng gió được tràn ra từ mép quạt hình tam giác, thổi mượt mà qua đường cong sọc 3D, ổn định luồng gió. Quạt có cơ chế hoạt động linh hoạt làm mát thụ động, khi GPU ở chế độ tải thấp nó sẽ tự động tắt không gây ồn.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/5/5/20210505_002bdeb0-57aa-47a0-957c-38bb5501f872.png\" alt=\"VGA Gigabyte GeForce RTX 2060 D6 6G (GV-N2060D6-6GD) | Cánh quạt hoạt động 3D\"></p><h4><strong>Khả năng vượt trội với bộ nhớ 6GB, GPU Geforce RTX 2060</strong></h4><p><a href=\"https://phongvu.vn/c/card-man-hinh-gigabyte\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(13, 110, 253);\">Card màn hình GIGABYTE</a>&nbsp;GeForce RTX 2060 D6 6G giúp cho thiết bị hoạt động mạnh mẽ vượt trội với GPU Geforce RTX 2060, GPU clock lên đến 1680MHz xử lý các thao tác, ứng dụng trên PC mượt mà.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/5/5/20210505_3d914ef4-86b0-48d5-8ece-fdeef61a8a4a.png\" alt=\"VGA Gigabyte GeForce RTX 2060 D6 6G (GV-N2060D6-6GD) | Chip xử lý mạnh mẽ\"></p><p>Bộ nhớ 6GB thuộc thế hệ DDR6 giao diện bộ nhớ 192 bít tốc độ vượt trội lên đến 14000MHz cho phép đọc và ghi nhớ dữ liệu một cách nhanh chóng nhất là khi bạn xử lý các tác vụ đồ họa hay trải nghiệm những tựa game cấu hình cao.</p><h4><strong>Trang bị cổng kết nối, chip đồ họa GeForce RTX 20 Series&nbsp;</strong></h4><p>Ở phiên bản này, Card màn hình trang bị 1 cổng xuất hình HDMI 2,0b và 3 cổng DisplayPort 1.4, cho phép thiết bị xuất hình ảnh và âm thanh chuẩn chất lượng cao.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/5/5/20210505_ba406631-1b9d-471a-b7e6-8f07009bf2ac.png\" alt=\"VGA Gigabyte GeForce RTX 2060 D6 6G (GV-N2060D6-6GD) | Trang bị cổng kết nối hiện đại\"></p><p>Đặc biệt, thiết bị còn sử dụng series chip đồ họa GeForce RTX 20 Series giúp nâng cấp PC của bạn hoạt động mượt chiến các tựa game hot cực tốt, thực hiện các thao tác đồ họa ở mức cao.</p><h4><strong>Sử dụng cảm ứng nhiệt trực tiếp ống nhiệt, ống nhiệt Composite , PCI-E 3.0</strong></h4><p>Ngoài ra, Card màn hình GIGABYTE GeForce RTX 2060 D6 6G sử dụng ống dẫn nhiệt composite kết hợp tính năng dẫn nhiệt và chuyển pha để quản lý hiệu quả sự truyền nhiệt giữa hai bề mặt rắn của thiết bị giúp tăng khả năng làm mát.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/5/5/20210505_4f777d41-4659-4c23-96dd-dfbf92a75601.png\" alt=\"VGA Gigabyte GeForce RTX 2060 D6 6G (GV-N2060D6-6GD) | Ống dẫn nhiệt hiệu quả\"></p><p>Hơn nữa, ống dẫn nhiệt bằng đồng nguyên chất, bao phủ VRAM thông qua một tấm kim loại lớn tiếp xúc để đảm bảo làm mát thích hợp cho Card màn hình. Thêm nữa, GIGABYTE GeForce RTX 2060 D6 6G còn có PCI - E 3.0 x 16.</p>",
+      "createdAt": 1684469584000,
+      "updatedAt": 1684469584002,
+      "id": 2,
+      "otherInfo": {
+        "brand": "GIGABYTE",
+        "guarantee": 36,
+        "producer": "NVIDIA",
+        "series": "GeForce RTX 20 series",
+        "name": "GeForce RTX 2060 D6 6G",
+        "gpu": "GeForce RTX 2060",
+        "memory": "6GB GDDR6 ( 14000 MHz / 192-bit )",
+        "gpulock": "Core Clock: 1680 MHz",
+        "pci": "PCI-E 3.0 x16",
+        "cudacore": "1920 CUDA cores",
+        "connector": "1 x HDMI 2.0b , 3 x DisplayPort 1.4",
+        "fan": "Tản nhiệt 2 quạt",
+        "power": "500W",
+        "size": "22.6 x 12.2 x 4.1 cm"
+      }
     },
     {
-      "id": 5,
-      "name": "Mainboard ASUS ROG STRIX Z790-F GAMING WIFI",
-      "brand": "ASUS",
-      "price": 11890000,
-      "categoryId": "mainboard",
-      "seriesId": "ROG",
-      "image": "https://lh3.googleusercontent.com/gWr1tvohOjgaXxtKAgAvtaKFy1BKL_xvb5e-8ZfveaPXXg4_6LuNDDs2v1MXGT83B59uopXimVgjzJGO6vYPfCvgonh8GNw=w500-rw"
+      "name": "CPU INTEL Core i7-11700 (8C/16T, 2.50 GHz - 4.90 GHz, 16MB) - 1200",
+      "categoryId": "CPU",
+      "seriesId": "Core i7",
+      "brand": "INTEL",
+      "price": 7399000,
+      "specifications": "- Socket: 1200, Intel Core thế hệ thứ 11/- Tốc độ: 2.50 GHz - 4.90 GHz (8 nhân, 16 luồng)/- Bộ nhớ đệm: 16MB/- Chip đồ họa tích hợp: Intel UHD Graphics 750",
+      "image": "https://lh3.googleusercontent.com/miUYrr5jpP3keEMPVazE6VomD6GxYAwptnWtnoQUJGzKdGg-B5hWpcrAA7CZnzzdjB07s-8lvPoXAHlPIq0o9vonUK4QxtyNgw=w500-rw",
+      "content": "<h2>Bộ vi xử lý&nbsp;<span style=\"color: rgb(13, 110, 253);\">CPU</span>&nbsp;Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200) là dòng bộ vi xử lý của Intel với thiết kế nhỏ gọn cùng hiệu năng hoạt động mạnh mẽ đáp ứng nhu cầu của mọi khách hàng sử dụng, kể cả những khách hàng khó tính nhất. Vì thế, đây chắc chắn là sản phẩm tối ưu cho máy tính của bạn.</h2><h3><strong>Thiết kế gọn nhẹ, thông số kỹ thuật mạnh mẽ</strong></h3><p>Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200) là bộ vi xử lý i7 thế hệ thứ 11 của Intel, với thiết kế nhỏ gọn chỉ 3.75x3.75x0.6cm hoàn toàn nhỏ gọn tiết kiệm không gian sử dụng của máy tính.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/12/17/20211217_8a2bd7c9-8ea1-49d0-a94d-d0693c852ae5.jpg\" alt=\"Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200) | Thiết kế nhỏ gọn\"></p><p>Cùng với đó, nó còn được làm bằng các loại vật liệu chất lượng cao giúp tăng khả năng chống chịu, nâng cao tuổi thọ sản phẩm.</p><p>Hơn nữa, nó còn sở hữu các thông số kỹ thuật vô cùng mạnh mẽ. Được sản xuất trên dây chuyền 14nm, nó có tần số xung nhịp cơ bản là 3,6 GHz và tần số turbo tối đa lên đến 5.0 GHz với 16MB bộ nhớ đệm thông minh, 8 nhân và 16 luồng không bị khóa hệ số nhân và có khả năng ép xung.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/12/17/20211217_eb2230bc-95d0-436d-aaa9-1d75a9e2b053.jpg\" alt=\"Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200) | Thông số kỹ thuật mạnh mẽ\"></p><h3><strong>Tốc độ Ram nhanh hơn, tăng gấp đôi băng thông giữa CPU và Chipset</strong></h3><p>CPU Intel Core i7-11700 này sở hữu tốc độ Ram khủng, được hỗ trợ tăng 10% so với các thế hệ trước lên đến 3200Mhz khi chạy mặc định.&nbsp;</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/12/17/20211217_5f6090f5-d8a0-46d4-8494-c516edb88022.jpg\" alt=\"Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200)| Tốc độ ram nhanh hơn\"></p><p>Hơn nữa, nó còn liên kết CPU với Chipset(DMI) tăng gấp đôi DMI từ x4 lên x8 giúp cho bạn có thể kết nối nhiều thiết bị ngoại vi và đồng thời cũng tăng tốc độ của chúng.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/12/17/20211217_94e2bac8-6ed9-4388-bcb6-c92f26762ce9.jpg\" alt=\"Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200)| Tăng gấp đôi băng thông giữa CPU và chipset\"></p><p>Không những thế, nó còn được cải tiến về kiến trúc nên có hiệu năng IPC (chu kỳ trên mỗi xung nhịp) tăng trên 10% so với trước đây giúp tăng hiệu suất phần cứng và phần mềm, đồng thời tăng cường trải nghiệm, chơi game mượt mà.</p><h3><strong>Nhân đồ họa tích hợp mạnh mẽ, 20 làn PCle 4.0</strong></h3><p>Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200) sở hữu nhân đồ họa tích hợp UHD Graphics 750 giúp tăng khả năng đa phương tiện và đồ họa cho phép tăng cường chất lượng hình ảnh, nâng cao hiệu suất 3D và xử lý hình ảnh nhanh hơn.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/12/17/20211217_94835e7a-0077-4237-8274-889a4ca133f2.jpg\" alt=\"Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200) | Nhân đồ họa tích hợp mạnh mẽ\"></p><p>Cùng với đó, nó được nâng cấp cho phép hỗ trợ tới 20 làn PCIe 4.0, băng thông của card màn hình và SSD NVMe mang lại tốc độ gấp đôi so với thế hệ trước.</p><h3><strong>Hỗ trợ đa phương tiện nâng cao và AVX-512, Luôn có Quick Sync</strong></h3><p>CPU Intel Core i7-11700 có khả năng hỗ trợ đa phương tiện nâng cao nhờ việc hỗ trợ các thuật toán mới như AV1 10bit, nén E2E, 12bit HEVC giúp đem hiệu suất cao hơn cho toàn hệ thống và nâng cao chất lượng mã hóa và giải mã phương tiện.</p><p><img src=\"https://storage.googleapis.com/teko-gae.appspot.com/media/image/2021/12/17/20211217_40d438b2-fff5-4dfc-996d-8f3df9024e07.jpg\" alt=\"Bộ vi xử lý/ CPU Intel Core i7-11700 (8 Cores 16 Threads up to 4.9 GHz 11th Gen LGA 1200) | Hỗ trợ đa phương tiện nâng cao\"></p><p>Cùng với đó, nó hỗ trợ Intel® Advanced Vector Extensions 512 (Intel® AVX-512) là một tập hợp gồm các lệnh mới có thể gia tăng hiệu năng cho các khối lượng công việc và mục đích sử dụng.</p><p>Ngoài ra, bạn không cần vào BIOS để bật Quick Sync mà tính năng này bây giờ luôn được tự động giúp cho người dùng trải nghiệm và sự thuận tiện&nbsp;với những ai thường xuyên sử dụng các phần mềm chỉnh sửa video như Adobe.</p>",
+      "createdAt": 1684470788582,
+      "updatedAt": 1684470788583,
+      "id": 3,
+      "otherInfo": {
+        "brand": "INTEL",
+        "guarantee": 36,
+        "cpu": "Core i7-11700",
+        "series": "Core i7",
+        "socket": 1200,
+        "totalCores": 8,
+        "totalThreads": 16,
+        "codeName": "Rocket Lake",
+        "generation": "Intel Core thế hệ thứ 11",
+        "turboFrequency": "2.50 GHz - 4.90 GHz",
+        "cache": "16MB",
+        "processorGraphics": "Intel UHD Graphics 750",
+        "tdp": "65W",
+        "memoryTypes": "DDR4 Dual channel"
+      }
     }
   ],
   "categories": [
     {
       "id": "CPU",
       "name": "CPU - Bộ vi xử lý",
-      "icon": "https://img.icons8.com/ios/50/electronics.png"
+      "namebuild": "Vi xử lý",
+      "icon": "https://img.icons8.com/ios/50/electronics.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/cpu.svg?alt=media&token=77cbc8d7-f570-45a4-8bee-8d87265e39fd"
     },
     {
       "id": "mainboard",
       "name": "Mainboard - Bo mạch chủ",
-      "icon": "https://img.icons8.com/external-outline-black-m-oki-orlando/32/external-mainboard-computer-component-outline-outline-black-m-oki-orlando.png"
+      "namebuild": "Bo mạch chủ",
+      "icon": "https://img.icons8.com/external-outline-black-m-oki-orlando/32/external-mainboard-computer-component-outline-outline-black-m-oki-orlando.png",
+      "img": "http://static.360buyimg.com/master-of-loader/pc/img/mother-board-icon.82595f5e.svg"
     },
     {
       "id": "VGA",
       "name": "VGA - Card màn hình",
-      "icon": "https://img.icons8.com/external-line-rakhmat-setiawan/64/external-computer-computer-line-line-rakhmat-setiawan-15.png"
+      "namebuild": "VGA",
+      "icon": "https://img.icons8.com/external-line-rakhmat-setiawan/64/external-computer-computer-line-line-rakhmat-setiawan-15.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/vga-card.svg?alt=media&token=9f112617-13ac-4016-aa3b-6f03d53a9f9a"
     },
     {
       "id": "ram",
       "name": "Ram",
-      "icon": "https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/external-ram-computer-xnimrodx-lineal-xnimrodx.png"
+      "namebuild": "Ram",
+      "icon": "https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/external-ram-computer-xnimrodx-lineal-xnimrodx.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544"
     },
     {
       "id": "HDD",
       "name": "Ổ HDD",
-      "icon": "https://img.icons8.com/external-line-lima-studio/64/external-hdd-laptop-line-lima-studio.png"
+      "namebuild": "Ổ HDD",
+      "icon": "https://img.icons8.com/external-line-lima-studio/64/external-hdd-laptop-line-lima-studio.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/hdd.svg?alt=media&token=05efe4a2-d30e-4f2f-8493-f61eea388840"
     },
     {
       "id": "SSD",
       "name": "Ổ SSD",
-      "icon": "https://img.icons8.com/external-goofy-line-kerismaker/96/external-SSD-computer-hardware-goofy-line-kerismaker.png"
+      "namebuild": "Ổ SSD",
+      "icon": "https://img.icons8.com/external-goofy-line-kerismaker/96/external-SSD-computer-hardware-goofy-line-kerismaker.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ssd.svg?alt=media&token=e4be0398-ae2a-4735-b2aa-240c46039abe"
     },
     {
       "id": "nguon",
       "name": "Nguồn",
-      "icon": "https://img.icons8.com/external-rabit-jes-detailed-outline-rabit-jes/62/external-power-supply-computer-hardware-rabit-jes-detailed-outline-rabit-jes.png"
+      "namebuild": "Nguồn",
+      "icon": "https://img.icons8.com/external-rabit-jes-detailed-outline-rabit-jes/62/external-power-supply-computer-hardware-rabit-jes-detailed-outline-rabit-jes.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/power-supply.svg?alt=media&token=47f2d1e9-6927-4778-917d-cb52e7d0b027"
     },
     {
       "id": "case",
       "name": "Vỏ Case",
-      "icon": "https://img.icons8.com/ios/50/server.png"
+      "namebuild": "Vỏ Case",
+      "icon": "https://img.icons8.com/ios/50/server.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/server.svg?alt=media&token=66b99bc2-7d47-4dd7-a1bb-b22976b54b41"
     },
     {
       "id": "tan-nhiet",
       "name": "Tản nhiệt",
-      "icon": "https://img.icons8.com/external-yogi-aprelliyanto-detailed-outline-yogi-aprelliyanto/64/external-fan-computer-hardware-yogi-aprelliyanto-detailed-outline-yogi-aprelliyanto.png"
+      "namebuild": "Tản nhiệt",
+      "icon": "https://img.icons8.com/external-yogi-aprelliyanto-detailed-outline-yogi-aprelliyanto/64/external-fan-computer-hardware-yogi-aprelliyanto-detailed-outline-yogi-aprelliyanto.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/fan.svg?alt=media&token=726a4f32-3cb8-4bff-ad7b-0428414f1443"
     },
     {
       "id": "man-hinh-may-tinh",
       "name": "Màn hình",
-      "icon": "https://img.icons8.com/ios/50/monitor--v1.png"
+      "namebuild": "Màn hình",
+      "icon": "https://img.icons8.com/ios/50/monitor--v1.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/monitor.svg?alt=media&token=9382ecd3-da49-4542-a9b5-8d8eb0a07128"
     },
     {
       "id": "ban-phim",
       "name": "Bàn phím",
-      "icon": "https://img.icons8.com/ios/50/keyboard.png"
+      "namebuild": "Bàn phím",
+      "icon": "https://img.icons8.com/ios/50/keyboard.png",
+      "img": "http://static.360buyimg.com/master-of-loader/pc/img/keyboard-icon.87b45d1c.svg"
     },
     {
       "id": "chuot",
       "name": "Chuột",
-      "icon": "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-mouse-gaming-kiranshastry-lineal-kiranshastry.png"
+      "namebuild": "Chuột",
+      "icon": "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-mouse-gaming-kiranshastry-lineal-kiranshastry.png",
+      "img": "http://static.360buyimg.com/master-of-loader/pc/img/mouse-icon.144f4d99.svg"
     },
     {
       "id": "tai-nghe",
       "name": "Tai nghe",
-      "icon": "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-headphones-man-accessories-kiranshastry-lineal-kiranshastry.png"
+      "namebuild": "Tai nghe",
+      "icon": "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-headphones-man-accessories-kiranshastry-lineal-kiranshastry.png",
+      "img": "https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/headphones.svg?alt=media&token=ca5310b8-dc9f-4c2e-9b51-54c07fb4327c"
     }
   ],
   "series": [
@@ -652,49 +723,43 @@
   ],
   "orders": [
     {
-      "fullName": "Thinh",
+      "fullName": "Thịnh",
       "email": "Quocthinh8712@gmail.com",
       "phoneNumber": "1657734848",
       "cityCode": "48",
-      "districtCode": "491",
-      "wardCode": "20225",
+      "districtCode": "494",
+      "wardCode": "20284",
       "address": "91 Cù Chính Lan",
       "paymentMethod": "atm",
-      "userId": 1,
-      "totalPrice": 42370000,
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Ngũ Hành Sơn",
+      "wardName": "Phường Mỹ An",
+      "userId": 2,
+      "totalPrice": 23189000,
       "status": "pending",
-      "createdAt": 1684055035403,
-      "updatedAt": 1684055035404,
+      "createdAt": 1684574190205,
+      "updatedAt": 1684574190205,
       "id": 1
     }
   ],
   "orderDetails": [
     {
       "orderId": 1,
-      "productId": 3,
-      "price": 22590000,
+      "productId": 1,
+      "price": 15990000,
       "quantity": 1,
-      "createdAt": 1684055035508,
-      "updatedAt": 1684055035508,
+      "createdAt": 1684574190284,
+      "updatedAt": 1684574190284,
       "id": 1
     },
     {
       "orderId": 1,
-      "productId": 5,
-      "price": 11890000,
-      "quantity": 1,
-      "createdAt": 1684055035622,
-      "updatedAt": 1684055035622,
-      "id": 2
-    },
-    {
-      "orderId": 1,
       "productId": 2,
-      "price": 7890000,
+      "price": 7199000,
       "quantity": 1,
-      "createdAt": 1684055035730,
-      "updatedAt": 1684055035730,
-      "id": 3
+      "createdAt": 1684574190354,
+      "updatedAt": 1684574190354,
+      "id": 2
     }
   ],
   "cities": [

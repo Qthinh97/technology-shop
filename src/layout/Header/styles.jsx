@@ -14,6 +14,8 @@ export const HeaderWrapper = styled.div`
   right: 0;
   left: 0;
   top: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 `;
 
 export const IconMain = styled(Link)`
@@ -41,6 +43,14 @@ export const CustomModalSearch = styled.div`
   border: 1px solid #ccc;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+`;
+
+export const ItemListSearch = styled(Link)`
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 `;
 
 export const CategoriesButtomWrapper = styled.div`
@@ -202,6 +212,7 @@ export const CustomSearchProductList = styled.div`
   width: 100%;
   overflow: auto;
   background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 export const Dropdown = styled.div`

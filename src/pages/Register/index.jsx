@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import * as S from "./styles";
 import Header from "../../layout/Header";
+import Footer from "../../layout/Footer";
+
 import { ROUTES } from "../../constants/routes";
 import { registerAction } from "../../redux/action";
 
@@ -32,6 +34,7 @@ function RegisterPage() {
     dispatch(
       registerAction({
         data: {
+          name: values.name,
           phoneNumber: values.phoneNumber,
           email: values.email,
           password: values.password,
@@ -57,17 +60,13 @@ function RegisterPage() {
             autoComplete="off"
           >
             <Form.Item
-              label="Phone number"
-              name="phoneNumber"
+              label="Tên"
+              name="name"
               rules={[
                 {
                   required: true,
                   whitespace: true,
-                  message: "Please input your phone number!",
-                },
-                {
-                  pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
-                  message: "Please input your phone number!",
+                  message: "Mời bạn nhập tên của mình!",
                 },
               ]}
             >
@@ -75,17 +74,34 @@ function RegisterPage() {
             </Form.Item>
 
             <Form.Item
-              label="Email"
+              label="Số điện thoại"
+              name="phoneNumber"
+              rules={[
+                {
+                  required: true,
+                  message: "Mời bạn nhập số điện thoại!",
+                },
+                {
+                  pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
+                  message: "Số điện thoại đăng nhập phải đúng cú pháp!",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+
+            <Form.Item
+              label="Email đăng ký"
               name="email"
               rules={[
                 {
                   required: true,
                   whitespace: true,
-                  message: "Please input your email!",
+                  message: "Mời bạn nhập email đăng ký!",
                 },
                 {
                   type: "email",
-                  message: "The input is not valid E-mail!",
+                  message: "Email đăng ký không đúng định dạng!",
                 },
               ]}
             >
@@ -99,7 +115,7 @@ function RegisterPage() {
                 {
                   required: true,
                   whitespace: true,
-                  message: "Please input your password!",
+                  message: "Mật khẩu yếu!",
                 },
               ]}
             >
@@ -114,7 +130,7 @@ function RegisterPage() {
               rules={[
                 {
                   required: true,
-                  message: "Please confirm your password!",
+                  message: "Mời bạn nhập lại mật khẩu!",
                 },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
@@ -122,9 +138,7 @@ function RegisterPage() {
                       return Promise.resolve();
                     }
                     return Promise.reject(
-                      new Error(
-                        "The two passwords that you entered do not match!"
-                      )
+                      new Error("Mật khẩu bạn vừa nhập không trùng khớp!")
                     );
                   },
                 }),
@@ -146,6 +160,7 @@ function RegisterPage() {
           </Form>
         </S.RegisterContainer>
       </S.RegisterWrapper>
+      <Footer />
     </>
   );
 }

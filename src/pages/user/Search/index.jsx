@@ -8,7 +8,7 @@ import { PRODUCT_LIMIT } from "../../../constants/paging";
 import { getProductListAction, getSeriesAction } from "../../../redux/action";
 import { ROUTES } from "../../../constants/routes";
 
-function ProductsByCategoryPage() {
+function SearchPage() {
   const dispatch = useDispatch();
   const [filterParams, setFilterParams] = useState({
     seriesId: [],
@@ -28,7 +28,6 @@ function ProductsByCategoryPage() {
         categoryId: params.categoryId,
       })
     );
-    dispatch(getSeriesAction({ categoryId: params.categoryId }));
   }, [params.categoryId]);
 
   const handleShowMore = () => {
@@ -62,7 +61,6 @@ function ProductsByCategoryPage() {
         page: 1,
         limit: PRODUCT_LIMIT,
         [key]: values,
-        categoryId: params.categoryId,
       })
     );
   };
@@ -161,4 +159,4 @@ function ProductsByCategoryPage() {
   );
 }
 
-export default ProductsByCategoryPage;
+export default SearchPage;

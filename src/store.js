@@ -6,6 +6,7 @@ import authReducer from "./redux/reducers/auth.reducer";
 import cartReducer from "./redux/reducers/cart.reducer";
 import orderReducer from "./redux/reducers/order.reducer";
 import locationReducer from "./redux/reducers/location.reducer";
+import buildPCReducer from "./redux/reducers/build.reducer";
 
 import createSagaMiddleware from "redux-saga";
 
@@ -22,6 +23,7 @@ const store = configureStore({
     cart: cartReducer,
     order: orderReducer,
     location: locationReducer,
+    build: buildPCReducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({

@@ -40,7 +40,6 @@ function HomePage() {
         limit: PRODUCT_LIMIT,
       })
     );
-    console.log(userInfo.data.role);
   }, []);
 
   const handleShowMore = () => {
@@ -108,7 +107,7 @@ function HomePage() {
                     color: "rgb(20, 53, 195) ",
                     fontWeight: 700,
                     position: "absolute",
-                    bottom: "8px",
+                    bottom: "22px",
                   }}
                 >
                   {item.price.toLocaleString()}đ

@@ -67,3 +67,8 @@ export const HeaderCart = styled(Col)`
   margin: 16px 0;
   width: 100%;
 `;
+
+export const Price = styled.p`
+  font-weight: 700;
+  color: #1435c3;
+`;

@@ -5,3 +5,4 @@ export * from "./series.action";
 export * from "./cart.action";
 export * from "./order.action";
 export * from "./location.action";
+export * from "./build.action";

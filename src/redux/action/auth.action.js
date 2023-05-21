@@ -7,6 +7,10 @@ export const registerAction = createAction(REQUEST(AUTH_ACTION.REGISTER));
 
 export const loguotAction = createAction(REQUEST(AUTH_ACTION.LOGOUT));
 
+export const updateUserInfoAction = createAction(
+  REQUEST(AUTH_ACTION.UPDATE_USER_INFO)
+);
+
 export const getUserInfoAction = createAction(
   REQUEST(AUTH_ACTION.GET_USER_INFO)
 );

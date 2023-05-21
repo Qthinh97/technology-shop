@@ -1,16 +1,23 @@
+import { Col, Row } from "antd";
 import styled from "styled-components";
 export const DetailWrapper = styled.div`
   margin-top: 100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  padding: 24px;
 `;
 
-export const DetailContent = styled.div`
+export const DetailContainer = styled(Row)`
+  max-width: 1232px;
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
+export const DetailContent = styled(Col)`
   background-color: #fff;
   padding: 24px;
-  margin: 12px;
-  max-width: 1100px;
-  width: 100%;
+  margin-right: 12px;
   border-radius: 10px;
   display: flex;
   text-align: start;
@@ -79,4 +86,47 @@ export const Buttom = styled.div`
       }
     }
   }};
+`;
+
+export const PolicyDetail = styled(Col)`
+  width: 100%;
+`;
+
+export const PolicyWrapper = styled.div`
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+`;
+
+export const ContentPolicy = styled.div`
+  display: flex;
+  line-height: 1.2;
+  text-align: start;
+  margin-bottom: 6px;
+`;
+
+export const PolicyIcon = styled.img`
+  width: 26px;
+  margin-right: 8px;
+`;
+
+export const OtherInfoWrapper = styled(Row)`
+  max-width: 1232px;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+`;
+
+export const OtherInfoContent = styled(Col)`
+  text-align: start;
+  margin-right: 12px;
+`;
+
+export const OtherInfoTable = styled(Col)`
+  text-align: start;
+  padding: 16px;
 `;

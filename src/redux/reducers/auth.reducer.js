@@ -123,6 +123,40 @@ const authReducer = createReducer(initialState, {
     };
   },
 
+  //UPDATE_USER_INFO
+  [REQUEST(AUTH_ACTION.UPDATE_USER_INFO)]: (state, action) => {
+    return {
+      ...state,
+      userInfo: {
+        ...state.userInfo,
+        load: true,
+        error: "",
+      },
+    };
+  },
+
+  [SUCCESS(AUTH_ACTION.UPDATE_USER_INFO)]: (state, action) => {
+    return {
+      ...state,
+      userInfo: {
+        ...state.userInfo,
+        load: false,
+      },
+    };
+  },
+
+  [FAIL(AUTH_ACTION.UPDATE_USER_INFO)]: (state, action) => {
+    const { error } = action.payload;
+    return {
+      ...state,
+      userInfo: {
+        ...state.userInfo,
+        load: false,
+        error,
+      },
+    };
+  },
+
   //LOGOUT
   [REQUEST(AUTH_ACTION.LOGOUT)]: (state, action) => {
     localStorage.removeItem("accessToken");

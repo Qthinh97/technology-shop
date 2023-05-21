@@ -142,3 +142,38 @@ p {
 .sidebar.show {
   left: 0;
 }
+
+tr,
+th,
+td {
+  padding: 12px 16px;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+}
+
+tbody tr:nth-child(2n) td {
+  background-color: rgb(246, 246, 246);
+}
+
+.user_info {
+  margin-left: 12px;
+  text-align: left;
+}
+
+.user_info h5 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.user_info h6 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 500;
+}
