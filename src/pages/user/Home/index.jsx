@@ -4,7 +4,7 @@ import Sidebar from "../../../layout/Sidebar";
 import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, generatePath } from "react-router-dom";
-import { Input, Button, Card, Row, Col, Select, Checkbox } from "antd";
+import { Button, Row, Col, Select } from "antd";
 
 import { PRODUCT_LIMIT } from "../../../constants/paging";
 import { ROUTES } from "../../../constants/routes";
@@ -16,7 +16,6 @@ function HomePage() {
   const dispatch = useDispatch();
 
   const { productList } = useSelector((state) => state.product);
-  const { userInfo } = useSelector((state) => state.auth);
 
   const slideImages = [
     {
@@ -153,7 +152,7 @@ function HomePage() {
               style={{ marginTop: "16px" }}
               onClick={() => handleShowMore()}
             >
-              Show more
+              Tải thêm
             </Button>
           )}
         </S.ProductList>

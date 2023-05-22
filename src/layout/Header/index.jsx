@@ -157,7 +157,7 @@ function Header() {
       >
         <S.CustomSearchHeader
           placeholder="Nhập tên sản phẩm, từ khóa cần tìm..."
-          enterButton="Search"
+          enterButton="Tìm kiếm"
           size="large"
           onChange={(e) => handleInputSearch(e.target.value)}
         />

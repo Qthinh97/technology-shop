@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Input, Button, Card, Row, Col, Select, Space } from "antd";
+import { Input, Button, Row, Col, Select, Space } from "antd";
 import { MinusOutlined, PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 

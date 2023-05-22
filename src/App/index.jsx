@@ -21,7 +21,6 @@ import ProductsByCategoryPage from "../pages/user/ProductsByCategory";
 import CartPage from "../pages/user/Cart";
 import CheckoutPage from "../pages/user/Checkout";
 import BuildPCPage from "../pages/user/BuildPC";
-import SearchPage from "../pages/user/Search";
 import AccountPage from "../pages/account/InfoAccount";
 import OderHistory from "../pages/account/OderHistory";
 
@@ -71,8 +70,6 @@ function App() {
           <Route path={ROUTES.USER.CHECKOUT} element={<CheckoutPage />} />
           <Route path={ROUTES.USER.BUILDPC} element={<BuildPCPage />} />
           <Route path={ROUTES.USER.DETAIL} element={<DetailPage />} />
-          {/* <Route path={ROUTES.USER.SEARCH} element={<SearchPage />} /> */}
-          SearchPage
         </Route>
         <Route element={<AccountLayout />}>
           <Route path={ROUTES.ACCOUNT.ACCOUNTINFO} element={<AccountPage />} />

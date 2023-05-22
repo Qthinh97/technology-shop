@@ -3,14 +3,8 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { Outlet } from "react-router-dom";
 import { UserOutlined, FileDoneOutlined } from "@ant-design/icons";
-import {
-  Link,
-  Navigate,
-  generatePath,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { Navigate, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { ROUTES } from "../../constants/routes";
 

@@ -1,11 +1,11 @@
 import * as S from "./styles";
 import { Link, generatePath, useParams } from "react-router-dom";
-import { Input, Button, Card, Row, Col, Select, Checkbox } from "antd";
+import { Button, Card, Row, Col, Select, Checkbox } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect, useMemo } from "react";
 
 import { PRODUCT_LIMIT } from "../../../constants/paging";
-import { getProductListAction, getSeriesAction } from "../../../redux/action";
+import { getProductListAction } from "../../../redux/action";
 import { ROUTES } from "../../../constants/routes";
 
 function SearchPage() {

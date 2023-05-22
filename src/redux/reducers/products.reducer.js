@@ -43,7 +43,7 @@ const productReducer = createReducer(initialState, {
   },
 
   [SUCCESS(PRODUCT_ACTION.GET_PRODUCT_LIST)]: (state, action) => {
-    const { data, meta, more, params } = action.payload;
+    const { data, meta, more } = action.payload;
     return {
       ...state,
       productList: {
@@ -79,7 +79,7 @@ const productReducer = createReducer(initialState, {
   },
 
   [SUCCESS(PRODUCT_ACTION.GET_SEARCH_LIST)]: (state, action) => {
-    const { data, meta, more, params } = action.payload;
+    const { data, meta } = action.payload;
     return {
       ...state,
       productListSearch: {

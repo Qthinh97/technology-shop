@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Input, Button, Card, Row, Col, Select, Form } from "antd";
 
-import { PRODUCT_LIMIT } from "../../../constants/paging";
 
 import {
   getCityListAction,

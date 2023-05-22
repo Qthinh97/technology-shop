@@ -103,10 +103,11 @@ export const ContentPolicy = styled.div`
   line-height: 1.2;
   text-align: start;
   margin-bottom: 6px;
+  align-items: center;
 `;
 
 export const PolicyIcon = styled.img`
-  width: 26px;
+  width: 23px;
   margin-right: 8px;
 `;
 

@@ -1,8 +1,7 @@
 import { Fragment, useEffect } from "react";
-import { Card, Col, Row, notification } from "antd";
+import { Col, Row, notification } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getHTML } from "react-quill";
 
 import { getProductDetailAction, addToCartAction } from "../../../redux/action";
 import { ROUTES } from "../../../constants/routes";
@@ -18,8 +17,6 @@ function DetailPage() {
   const navigate = useNavigate();
 
   const { productDetail } = useSelector((state) => state.product);
-
-  const img = productDetail.data.image;
 
   useEffect(() => {
     dispatch(getProductDetailAction({ id }));

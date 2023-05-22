@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { useEffect } from "react";
+import { Button, Form, Input } from "antd";
 import { Link, generatePath, useNavigate, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -154,7 +154,7 @@ function RegisterPage() {
 
             <Form.Item>
               <Button type="primary" htmlType="submit" block>
-                Submit
+                Đăng ký
               </Button>
             </Form.Item>
           </Form>

@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import { Link, generatePath, useParams } from "react-router-dom";
-import { Input, Button, Card, Row, Col, Select, Checkbox } from "antd";
+import { Button, Card, Row, Col, Select, Checkbox } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect, useMemo } from "react";
 
@@ -128,31 +128,27 @@ function ProductsByCategoryPage() {
           </Card>
         </Col>
         <Col span={20}>
-          <Row gutter={[16, 16]} style={{ marginBottom: 16 }}>
-            <Col span={8}>
-              <Select
-                onChange={(value) => handleFilter("sort", value)}
-                placeholder="Sắp xếp theo"
-                style={{
-                  width: "30%",
-                  marginBottom: "20px",
-                  display: "flex",
-                }}
-              >
-                <Select.Option value="name.desc">Tên A-Z</Select.Option>
-                <Select.Option value="name.asc">Tên Z-A</Select.Option>
-                <Select.Option value="price.asc">Giá tăng dần</Select.Option>
-                <Select.Option value="price.desc">Giá giảm dần</Select.Option>
-              </Select>
-            </Col>
-          </Row>
+          <Select
+            onChange={(value) => handleFilter("sort", value)}
+            placeholder="Sắp xếp theo"
+            style={{
+              width: "30%",
+              marginBottom: "20px",
+              display: "flex",
+            }}
+          >
+            <Select.Option value="name.desc">Tên A-Z</Select.Option>
+            <Select.Option value="name.asc">Tên Z-A</Select.Option>
+            <Select.Option value="price.asc">Giá tăng dần</Select.Option>
+            <Select.Option value="price.desc">Giá giảm dần</Select.Option>
+          </Select>
           <Row gutter={[16, 16]}>{renderProductList}</Row>
           {productList.data.length !== productList.meta.total && (
             <Button
               style={{ marginTop: "16px" }}
               onClick={() => handleShowMore()}
             >
-              Show more
+              Tải thêm
             </Button>
           )}
         </Col>
