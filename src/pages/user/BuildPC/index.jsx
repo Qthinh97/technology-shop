@@ -27,6 +27,13 @@ function BuildPCPage() {
 
   const [showModal, setShowModal] = useState(false);
 
+  const [filterParams, setFilterParams] = useState({
+    searchKey: "",
+    sort: "",
+  });
+
+  const [categoryId, setCategoryId] = useState("");
+
   const { productList } = useSelector((state) => state.product);
 
   const { categoryList } = useSelector((state) => state.category);
@@ -47,6 +54,22 @@ function BuildPCPage() {
       })
     );
   }, []);
+
+  const handleFilter = (key, values) => {
+    setFilterParams({
+      ...filterParams,
+      [key]: values,
+    });
+    dispatch(
+      getProductListAction({
+        ...filterParams,
+        page: 1,
+        limit: PRODUCT_LIMIT,
+        [key]: values,
+        categoryId: categoryId,
+      })
+    );
+  };
 
   const handleActiveItem = (item) => {
     dispatch(
@@ -175,6 +198,7 @@ function BuildPCPage() {
 
   const renderProductList = useMemo(() => {
     return productList.data.map((item) => {
+      setCategoryId(item.categoryId);
       return (
         <S.ProductItem key={item.id}>
           <S.ImgProduct alt="logo" src={item.image} />
@@ -232,7 +256,7 @@ function BuildPCPage() {
               <Row gutter={[16, 16]} style={{ marginBottom: 16 }}>
                 <Col span={10}>
                   <Select
-                    // onChange={(value) => handleFilter("sort", value)}
+                    onChange={(value) => handleFilter("sort", value)}
                     placeholder="Sắp xếp theo"
                     style={{
                       display: "flex",
@@ -250,6 +274,7 @@ function BuildPCPage() {
                   <Input
                     style={{ borderRadius: 30 }}
                     placeholder="Tìm linh kiện..."
+                    onChange={(e) => handleFilter("searchKey", e.target.value)}
                   />
                 </Col>
               </Row>

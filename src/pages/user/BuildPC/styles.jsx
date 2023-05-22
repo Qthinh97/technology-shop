@@ -130,6 +130,8 @@ export const ProductItem = styled.div`
   align-items: center;
   justify-content: start;
   padding: 10px 16px;
+  border-top: 1px dashed #000;
+  border-bottom: 1px dashed #000;
 `;
 
 export const ImgProduct = styled.img`

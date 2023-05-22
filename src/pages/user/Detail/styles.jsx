@@ -125,6 +125,8 @@ export const OtherInfoWrapper = styled(Row)`
 export const OtherInfoContent = styled(Col)`
   text-align: start;
   margin-right: 12px;
+  max-width: 100%;
+  overflow: hidden;
 `;
 
 export const OtherInfoTable = styled(Col)`
