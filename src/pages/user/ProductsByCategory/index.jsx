@@ -16,6 +16,7 @@ function ProductsByCategoryPage() {
   });
 
   const { productList } = useSelector((state) => state.product);
+
   const { seriesList } = useSelector((state) => state.series);
 
   const params = useParams();
@@ -34,6 +35,8 @@ function ProductsByCategoryPage() {
   const handleShowMore = () => {
     dispatch(
       getProductListAction({
+        ...filterParams,
+        categoryId: params.categoryId,
         page: productList.meta.page + 1,
         limit: PRODUCT_LIMIT,
         more: true,
@@ -142,7 +145,12 @@ function ProductsByCategoryPage() {
             <Select.Option value="price.asc">Giá tăng dần</Select.Option>
             <Select.Option value="price.desc">Giá giảm dần</Select.Option>
           </Select>
-          <Row gutter={[16, 16]}>{renderProductList}</Row>
+          {productList.data.length !== 0 ? (
+            <Row gutter={[16, 16]}>{renderProductList}</Row>
+          ) : (
+            <div>Chưa có sản phẩm mới</div>
+          )}
+
           {productList.data.length !== productList.meta.total && (
             <Button
               style={{ marginTop: "16px" }}

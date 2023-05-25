@@ -1,14 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Input, Button, Card, Row, Col, Select, Form } from "antd";
+import { Input, Button, Card, Row, Col, Form } from "antd";
 
-
-import {
-  getCityListAction,
-  getDistrictListAction,
-  getWardListAction,
-  updateUserInfoAction,
-} from "../../../redux/action";
+import { getCityListAction, updateUserInfoAction } from "../../../redux/action";
 
 import * as S from "./styles";
 
@@ -19,14 +13,12 @@ function AccountPage() {
 
   const { userInfo } = useSelector((state) => state.auth);
 
-  const { cityList, districtList, wardList } = useSelector(
-    (state) => state.location
-  );
-
   const initialValues = {
+    id: userInfo.data.id,
     fullName: userInfo.data.name,
     email: userInfo.data.email,
     phoneNumber: userInfo.data.phoneNumber,
+    address: userInfo.data.address,
   };
 
   useEffect(() => {
@@ -39,60 +31,14 @@ function AccountPage() {
     dispatch(getCityListAction());
   }, []);
 
-  const renderCityOptions = useMemo(() => {
-    return cityList.data.map((item) => {
-      return (
-        <Select.Option key={item.id} value={item.code}>
-          {item.name}
-        </Select.Option>
-      );
-    });
-  }, [cityList.data]);
-
-  const renderDistrictOptions = useMemo(() => {
-    return districtList.data.map((item) => {
-      return (
-        <Select.Option key={item.id} value={item.code}>
-          {item.name}
-        </Select.Option>
-      );
-    });
-  }, [districtList.data]);
-
-  const renderWardListOptions = useMemo(() => {
-    return wardList.data.map((item) => {
-      return (
-        <Select.Option key={item.id} value={item.code}>
-          {item.name}
-        </Select.Option>
-      );
-    });
-  }, [wardList.data]);
-
   const handleSubmitAccountForm = (values) => {
-    const { cityCode, districtCode, wardCode, fullName, phoneNumber } = values;
-    const cityData = cityList.data.find((item) => item.code === cityCode);
-    const districtData = districtList.data.find(
-      (item) => item.code === districtCode
-    );
-    const wardData = wardList.data.find((item) => item.code === wardCode);
-    // dispatch(
-    //   orderProductAction({
-    //     data: {
-    //       ...values,
-    //       cityName: cityData?.name,
-    //       districtName: districtData?.name,
-    //       wardName: wardData?.name,
-    //       userId: userInfo.data.id,
-    //     },
-    //   })
-    // );
+    const { fullName, phoneNumber, address } = values;
     dispatch(
       updateUserInfoAction({
-        data: {
-          name: fullName,
-          phoneNumber: phoneNumber,
-        },
+        id: initialValues.id,
+        name: fullName,
+        phoneNumber: phoneNumber,
+        address: address,
       })
     );
   };
@@ -139,55 +85,6 @@ function AccountPage() {
                   rules={[{ required: true, message: "Required!" }]}
                 >
                   <Input />
-                </Form.Item>
-              </Col>
-              <Col span={8}>
-                <Form.Item
-                  label="Tỉnh/Thành"
-                  name="cityCode"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Select
-                    onChange={(value) => {
-                      dispatch(getDistrictListAction({ cityCode: value }));
-                      AccountForm.setFieldsValue({
-                        districtCode: undefined,
-                        wardCode: undefined,
-                      });
-                    }}
-                  >
-                    {renderCityOptions}
-                  </Select>
-                </Form.Item>
-              </Col>
-              <Col span={8}>
-                <Form.Item
-                  label="Quận/Huyện"
-                  name="districtCode"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Select
-                    onChange={(value) => {
-                      dispatch(getWardListAction({ districtCode: value }));
-                      AccountForm.setFieldsValue({
-                        wardCode: undefined,
-                      });
-                    }}
-                    disabled={!AccountForm.getFieldValue("cityCode")}
-                  >
-                    {renderDistrictOptions}
-                  </Select>
-                </Form.Item>
-              </Col>
-              <Col span={8}>
-                <Form.Item
-                  label="Phường/Xã"
-                  name="wardCode"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Select disabled={!AccountForm.getFieldValue("districtCode")}>
-                    {renderWardListOptions}
-                  </Select>
                 </Form.Item>
               </Col>
               <Col span={24}>

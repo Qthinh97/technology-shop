@@ -74,6 +74,13 @@ export const InforItem = styled(Col)`
   margin: 0 8px;
 `;
 
+export const NameInfoItem = styled(Col)`
+  text-align: start;
+  font-size: 14px;
+  width: 100%;
+  max-width: 240px;
+`;
+
 export const PriceItem = styled.h3`
   color: rgb(20, 53, 195);
   padding-left: 20px;
@@ -123,6 +130,8 @@ export const HeaderModal = styled.div``;
 export const ModalProductList = styled.div`
   border-top: 1px dashed #000;
   border-bottom: 1px dashed #000;
+  height: 450px;
+  overflow: auto;
 `;
 
 export const ProductItem = styled.div`
@@ -142,7 +151,8 @@ export const ImgProduct = styled.img`
 `;
 
 export const NameProduct = styled.div`
-  max-width: 380px;
+  max-width: 400px;
+  width: 100%;
   text-align: start;
   margin-right: 16px;
 `;
@@ -151,6 +161,8 @@ export const PriceProduct = styled.div`
   font-weight: 700;
   color: #1435c3;
   text-align: start;
+  max-width: 110px;
+  width: 100%;
 `;
 
 export const ButtonSelectProduct = styled(Button)`

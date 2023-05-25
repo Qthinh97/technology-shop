@@ -75,12 +75,19 @@ function* getUserInfoSaga(action) {
 
 function* updateInfoSaga(action) {
   try {
-    const { data } = action.payload;
-    const result = yield axios.patch(`http://localhost:4000/users/`, data);
+    const { id, name, phoneNumber, address } = action.payload;
+
+    const result = yield axios.patch(`http://localhost:4000/users/${id}`, {
+      name,
+      phoneNumber,
+      address,
+    });
     yield put({
       type: SUCCESS(AUTH_ACTION.UPDATE_USER_INFO),
       payload: {
-        data: result.data,
+        name: result.name,
+        phoneNumber: result.phoneNumber,
+        address: result.address,
       },
     });
   } catch (e) {

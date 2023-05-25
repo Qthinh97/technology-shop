@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Input, Button, Row, Col, Select, Space } from "antd";
+import { Input, Button, Row, Col, Select, Space, Pagination } from "antd";
 import { MinusOutlined, PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
@@ -86,6 +86,17 @@ function BuildPCPage() {
     );
   };
 
+  const handleChangePage = (page) => {
+    dispatch(
+      getProductListAction({
+        ...filterParams,
+        categoryId: categoryId,
+        page: page,
+        limit: PRODUCT_LIMIT,
+      })
+    );
+  };
+
   const renderCategoryBuildPC = useMemo(() => {
     return categoryList.data.map((item) => {
       const findIndexBuildList = buildList.findIndex(
@@ -115,9 +126,7 @@ function BuildPCPage() {
               </S.InforItem>
             ) : (
               <S.InforItem span={14}>
-                <p style={{ textAlign: "start", fontSize: 13 }}>
-                  {valuesItem?.data.name}
-                </p>
+                <S.NameInfoItem>{valuesItem?.data.name}</S.NameInfoItem>
 
                 <Space.Compact style={{ textAlign: "start", marginLeft: 30 }}>
                   {valuesItem?.quantity !== 1 ? (
@@ -281,6 +290,15 @@ function BuildPCPage() {
             </S.HeaderModal>
 
             <S.ModalProductList>{renderProductList}</S.ModalProductList>
+            <Row justify="center">
+              <Pagination
+                current={productList.meta.page}
+                pageSize={PRODUCT_LIMIT}
+                total={productList.meta.total}
+                onChange={(page) => handleChangePage(page)}
+                style={{ margin: "16px auto 0" }}
+              />
+            </Row>
           </S.ModalContainer>
         </S.ModalSelectItem>
       ) : null}

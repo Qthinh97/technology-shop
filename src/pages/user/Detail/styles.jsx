@@ -35,7 +35,9 @@ export const DetailMainImage = styled.img`
   min-width: 240px;
   width: 100%;
 `;
-export const DetailInfo = styled.div``;
+export const DetailInfo = styled.div`
+  margin-top: 16px;
+`;
 
 export const Brand = styled.div`
   color: rgb(20, 53, 195);

@@ -48,7 +48,7 @@ function DetailPage() {
     return Object.keys(productDetail.data.otherInfo).map((key) => {
       return (
         <tr key={key}>
-          <td>{OTHER_INFO[key]}</td>
+          <td style={{ minWidth: 130 }}>{OTHER_INFO[key]}</td>
           <td>{productDetail.data.otherInfo[key]}</td>
         </tr>
       );

@@ -67,11 +67,6 @@ function ProductManagement() {
             <Button
               type="primary"
               ghost
-              // onClick={() =>
-              //   navigate(
-              //     generatePath(ROUTES.ADMIN.UPDATE_PRODUCT, { id: item.id })
-              //   )
-              // }
             >
               Update
             </Button>
