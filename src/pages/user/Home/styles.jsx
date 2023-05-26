@@ -8,7 +8,8 @@ export const HomeWrapper = styled.div`
 
 export const ProductListWrapper = styled.div`
   display: flex;
-  max-width: 1216px;
+  max-width: 1232px;
+  padding: 16px;
   width: 100%;
   min-height: 400px;
   margin: auto;
@@ -25,7 +26,6 @@ export const CardCustom = styled.div`
 `;
 
 export const ProductList = styled.div`
-  padding: 12px;
   width: 100%;
 `;
 

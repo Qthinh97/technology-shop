@@ -6,6 +6,7 @@ export const AccountLayout = styled.div`
   margin-top: 100px;
   display: flex;
   justify-content: center;
+  flex: 1;
 `;
 
 export const AccountLayoutWrapper = styled.div`

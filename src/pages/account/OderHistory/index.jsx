@@ -1,9 +1,15 @@
 import { useEffect } from "react";
-import { Table } from "antd";
+import { Table, Tag } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 
 import { getOrderList } from "../../../redux/action";
+
+const ORDER_STATUS = {
+  pending: "Chờ giao hàng",
+  shipping: "Đang giao hàng",
+  success: "Đã giao hàng",
+};
 
 const OrderHistories = () => {
   const dispatch = useDispatch();
@@ -56,6 +62,7 @@ const OrderHistories = () => {
       title: "Trạng thái đơn hàng",
       dataIndex: "status",
       key: "status",
+      render: (status) => <Tag color="gold">{ORDER_STATUS[status]}</Tag>,
     },
   ];
 

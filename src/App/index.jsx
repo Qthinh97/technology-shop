@@ -27,6 +27,8 @@ import OderHistory from "../pages/account/OderHistory";
 import { ROUTES } from "../constants/routes";
 import { getUserInfoAction } from "../redux/action/";
 
+import * as S from "./styles";
+
 function App() {
   const dispatch = useDispatch();
 
@@ -45,7 +47,7 @@ function App() {
   }, [pathname]);
 
   return (
-    <div className="App" style={{ backgroundColor: "#f4f4f4" }}>
+    <S.AppWrapper>
       <Routes>
         <Route element={<AdminLayout />}>
           <Route path={ROUTES.ADMIN.DASHBOARD} element={<DashboardPage />} />
@@ -78,7 +80,7 @@ function App() {
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
         <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
       </Routes>
-    </div>
+    </S.AppWrapper>
   );
 }
 
