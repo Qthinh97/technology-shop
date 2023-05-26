@@ -1,4 +1,5 @@
 import { takeEvery, put } from "redux-saga/effects";
+import { notification } from 'antd'
 import axios from "axios";
 
 import { ORDER_ACTION, REQUEST, SUCCESS, FAIL } from "../constants";
@@ -17,6 +18,11 @@ function* orderProductSaga(action) {
       });
     }
     yield callback();
+    notification.success({
+      message: 'Đặt hàng thành công',
+      description: 'Cảm ơn bạn đã mua hàng tại shop',
+      placement: 'bottomRight'
+    })
     yield put({
       type: SUCCESS(ORDER_ACTION.ORDER_PRODUCT),
       payload: {

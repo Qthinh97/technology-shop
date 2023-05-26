@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Col } from "antd";
 import styled from "styled-components";
 export const DetailWrapper = styled.div`
   margin-top: 100px;
@@ -8,19 +8,15 @@ export const DetailWrapper = styled.div`
   padding: 24px;
 `;
 
-export const DetailContainer = styled(Row)`
+export const DetailContainer = styled.div`
   max-width: 1232px;
-  display: flex;
-  flex-wrap: nowrap;
 `;
 
-export const DetailContent = styled(Col)`
+export const DetailContent = styled.div`
   background-color: #fff;
   padding: 24px;
-  margin-right: 12px;
   border-radius: 10px;
   display: flex;
-  text-align: start;
 `;
 
 export const DetailLeftContent = styled.div`
@@ -98,6 +94,10 @@ export const PolicyWrapper = styled.div`
   background-color: #fff;
   padding: 12px;
   border-radius: 10px;
+
+  & > h3 {
+    margin-top: 0;
+  }
 `;
 
 export const ContentPolicy = styled.div`
@@ -113,9 +113,8 @@ export const PolicyIcon = styled.img`
   margin-right: 8px;
 `;
 
-export const OtherInfoWrapper = styled(Row)`
+export const OtherInfoWrapper = styled.div`
   max-width: 1232px;
-  display: flex;
   flex-wrap: nowrap;
   padding: 20px;
   background-color: #fff;
@@ -124,14 +123,8 @@ export const OtherInfoWrapper = styled(Row)`
   border-radius: 8px;
 `;
 
-export const OtherInfoContent = styled(Col)`
+export const OtherInfoContent = styled.div`
   text-align: start;
-  margin-right: 12px;
   max-width: 100%;
   overflow: hidden;
-`;
-
-export const OtherInfoTable = styled(Col)`
-  text-align: start;
-  padding: 16px;
 `;

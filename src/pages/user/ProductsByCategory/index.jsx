@@ -120,7 +120,7 @@ function ProductsByCategoryPage() {
   return (
     <S.CategoryPageWrap>
       <Row gutter={[16, 16]} style={{ width: "100%" }}>
-        <Col span={4}>
+        <Col lg={6} xs={24}>
           <Card title="Phân loại" size="small">
             <Checkbox.Group
               style={{ textAlign: "start" }}
@@ -130,7 +130,7 @@ function ProductsByCategoryPage() {
             </Checkbox.Group>
           </Card>
         </Col>
-        <Col span={20}>
+        <Col lg={18} xs={24}>
           <Select
             onChange={(value) => handleFilter("sort", value)}
             placeholder="Sắp xếp theo"

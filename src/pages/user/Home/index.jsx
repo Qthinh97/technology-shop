@@ -130,32 +130,38 @@ function HomePage() {
         <SlideShow slideImages={slideImages} />
       </div>
       <S.ProductListWrapper>
-        <Sidebar />
-        <S.ProductList>
-          <Select
-            onChange={(value) => handleFilter("sort", value)}
-            placeholder="Sắp xếp theo"
-            style={{
-              width: "30%",
-              marginBottom: "20px",
-              display: "flex",
-            }}
-          >
-            <Select.Option value="name.desc">Tên A-Z</Select.Option>
-            <Select.Option value="name.asc">Tên Z-A</Select.Option>
-            <Select.Option value="price.asc">Giá tăng dần</Select.Option>
-            <Select.Option value="price.desc">Giá giảm dần</Select.Option>
-          </Select>
-          <Row gutter={[16, 16]}>{renderProductList}</Row>
-          {productList.data.length !== productList.meta.total && (
-            <Button
-              style={{ marginTop: "16px" }}
-              onClick={() => handleShowMore()}
-            >
-              Tải thêm
-            </Button>
-          )}
-        </S.ProductList>
+        <Row gutter={[16, 16]}>
+          <Col lg={6} xs={24}>
+            <Sidebar />
+          </Col>
+          <Col lg={18} xs={24}>
+            <S.ProductList>
+              <Select
+                onChange={(value) => handleFilter("sort", value)}
+                placeholder="Sắp xếp theo"
+                style={{
+                  width: "30%",
+                  marginBottom: "20px",
+                  display: "flex",
+                }}
+              >
+                <Select.Option value="name.desc">Tên A-Z</Select.Option>
+                <Select.Option value="name.asc">Tên Z-A</Select.Option>
+                <Select.Option value="price.asc">Giá tăng dần</Select.Option>
+                <Select.Option value="price.desc">Giá giảm dần</Select.Option>
+              </Select>
+              <Row gutter={[16, 16]}>{renderProductList}</Row>
+              {productList.data.length !== productList.meta.total && (
+                <Button
+                  style={{ marginTop: "16px" }}
+                  onClick={() => handleShowMore()}
+                >
+                  Tải thêm
+                </Button>
+              )}
+            </S.ProductList>
+          </Col>
+        </Row>
       </S.ProductListWrapper>
     </S.HomeWrapper>
   );

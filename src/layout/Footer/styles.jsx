@@ -7,9 +7,9 @@ export const FooterWrapper = styled.div`
 `;
 
 export const PolicyFooter = styled.div`
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 0;
+  max-width: 1232px;
+  padding: 16px;
+  margin: 0 auto;
   text-align: start;
   color: #fff;
 `;

@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { Link, generatePath } from "react-router-dom";
 
 export const Sidebar = styled.div`
-  padding: 12px;
   text-align: start;
   font-size: 14px;
-  max-width: 225px;
+  max-width: 100%;
 `;
 
 export const CategoryLink = styled(Link)`
