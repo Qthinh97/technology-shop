@@ -8,7 +8,7 @@ export const HomeWrapper = styled.div`
 
 export const ProductListWrapper = styled.div`
   display: flex;
-  max-width: 1232px;
+  max-width: 1216px;
   padding: 16px;
   width: 100%;
   min-height: 400px;

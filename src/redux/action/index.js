@@ -6,3 +6,5 @@ export * from "./cart.action";
 export * from "./order.action";
 export * from "./location.action";
 export * from "./build.action";
+export * from "./review.action";
+export * from "./favorite.action";

@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Input, Button, Row, Col, Select, Space, Pagination } from "antd";
 import { MinusOutlined, PlusOutlined, DeleteOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, generatePath } from "react-router-dom";
 
 import {
   getCategoryAction,
@@ -126,7 +126,13 @@ function BuildPCPage() {
               </S.InforItem>
             ) : (
               <S.InforItem span={14}>
-                <S.NameInfoItem>{valuesItem?.data.name}</S.NameInfoItem>
+                <S.NameInfoItem
+                  to={generatePath(ROUTES.USER.DETAIL, {
+                    id: valuesItem.data.id,
+                  })}
+                >
+                  {valuesItem?.data.name}
+                </S.NameInfoItem>
 
                 <Space.Compact style={{ textAlign: "start", marginLeft: 30 }}>
                   {valuesItem?.quantity !== 1 ? (
@@ -211,7 +217,13 @@ function BuildPCPage() {
       return (
         <S.ProductItem key={item.id}>
           <S.ImgProduct alt="logo" src={item.image} />
-          <S.NameProduct>{item.name}</S.NameProduct>
+          <S.NameProduct
+            to={generatePath(ROUTES.USER.DETAIL, {
+              id: item.id,
+            })}
+          >
+            {item.name}
+          </S.NameProduct>
           <S.PriceProduct>{item.price.toLocaleString()}₫</S.PriceProduct>
           <S.ButtonSelectProduct onClick={() => handleActiveItem(item)}>
             Chọn

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, generatePath } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Sidebar = styled.div`
   text-align: start;
@@ -29,7 +29,7 @@ export const CustomCard = styled.div`
   padding: 0;
   background-color: #fff;
   border-radius: 8px;
-  min-width: 200px;
+  min-width: 240px;
   padding-bottom: 16px;
 `;
 

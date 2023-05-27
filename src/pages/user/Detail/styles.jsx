@@ -40,11 +40,15 @@ export const Brand = styled.div`
   margin-bottom: 24px;
 `;
 
+export const ReviewItemWrapper = styled.div`
+  margin-top: 8px;
+`;
+
 export const DetailPrice = styled.div`
   color: rgb(20, 53, 195);
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin: 24px 0;
 `;
 
 export const Buttom = styled.div`
@@ -114,7 +118,7 @@ export const PolicyIcon = styled.img`
 `;
 
 export const OtherInfoWrapper = styled.div`
-  max-width: 1232px;
+  max-width: 1188px;
   flex-wrap: nowrap;
   padding: 20px;
   background-color: #fff;

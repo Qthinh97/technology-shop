@@ -23,6 +23,8 @@ import CheckoutPage from "../pages/user/Checkout";
 import BuildPCPage from "../pages/user/BuildPC";
 import AccountPage from "../pages/account/InfoAccount";
 import OderHistory from "../pages/account/OderHistory";
+import ChangePassword from "../pages/account/ChangePassword";
+import FavoriteProducts from "../pages/account/FavoriteProducts";
 
 import { ROUTES } from "../constants/routes";
 import { getUserInfoAction } from "../redux/action/";
@@ -76,6 +78,14 @@ function App() {
         <Route element={<AccountLayout />}>
           <Route path={ROUTES.ACCOUNT.ACCOUNTINFO} element={<AccountPage />} />
           <Route path={ROUTES.ACCOUNT.ODERHISTORY} element={<OderHistory />} />
+          <Route
+            path={ROUTES.ACCOUNT.FAVORITE}
+            element={<FavoriteProducts />}
+          />
+          <Route
+            path={ROUTES.ACCOUNT.CHANGEPASSWORD}
+            element={<ChangePassword />}
+          />
         </Route>
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
         <Route path={ROUTES.REGISTER} element={<RegisterPage />} />

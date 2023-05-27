@@ -1,9 +1,28 @@
-import { Fragment, useEffect } from "react";
-import { Col, Row, notification } from "antd";
+import { Fragment, useEffect, useMemo } from "react";
+import {
+  Col,
+  Row,
+  notification,
+  Form,
+  Space,
+  Rate,
+  Button,
+  Card,
+  Input,
+} from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 
-import { getProductDetailAction, addToCartAction } from "../../../redux/action";
+import {
+  getProductDetailAction,
+  addToCartAction,
+  getReviewListAction,
+  favoriteProductAction,
+  unFavoriteProductAction,
+  sendReviewAction,
+} from "../../../redux/action";
+import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { ROUTES } from "../../../constants/routes";
 import { OTHER_INFO } from "./constants/other";
 
@@ -11,15 +30,99 @@ import * as S from "./styles";
 
 function DetailPage() {
   const { id } = useParams();
+  const [reviewForm] = Form.useForm();
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
+  const { userInfo } = useSelector((state) => state.auth);
   const { productDetail } = useSelector((state) => state.product);
+  const { reviewList } = useSelector((state) => state.review);
+  // REVIEW
+  const averageRate = useMemo(
+    () =>
+      reviewList.data.length
+        ? (
+            reviewList.data.reduce((total, item) => total + item.rate, 0) /
+            reviewList.data.length
+          ).toFixed(1)
+        : 0,
+    [reviewList.data]
+  );
+
+  // isLike
+  const isLike = useMemo(
+    () =>
+      productDetail.data.favorites?.findIndex(
+        (item) => item.userId === userInfo.data.id
+      ) !== -1,
+    [productDetail.data.favorites, userInfo.data.id]
+  );
+
+  // isLike
+  const handleToggleFavorite = () => {
+    if (userInfo.data.id) {
+      if (isLike) {
+        const favoriteData = productDetail.data.favorites?.find(
+          (item) => item.userId === userInfo.data.id
+        );
+        dispatch(
+          unFavoriteProductAction({
+            id: favoriteData.id,
+            productId: productDetail.data.id,
+          })
+        );
+      } else {
+        dispatch(
+          favoriteProductAction({
+            productId: productDetail.data.id,
+            userId: userInfo.data.id,
+          })
+        );
+      }
+    } else {
+      notification.error({
+        message: "Vui lòng đăng nhập để thực hiện chức năng này!",
+      });
+    }
+  };
+  // REVIEW
+  const handleReview = (values) => {
+    dispatch(
+      sendReviewAction({
+        data: {
+          ...values,
+          userId: userInfo.data.id,
+          productId: parseInt(id),
+        },
+        callback: () => reviewForm.resetFields(),
+      })
+    );
+  };
+
+  const renderReviewList = useMemo(() => {
+    return reviewList.data.map((item) => {
+      return (
+        <S.ReviewItemWrapper key={item.id}>
+          <Space>
+            <h3>{item.user.fullName}</h3>
+            <span>{moment(item.createdAt).fromNow()}</span>
+          </Space>
+          <Rate
+            value={item.rate}
+            disabled
+            style={{ display: "block", fontSize: 12 }}
+          />
+          <p>{item.comment}</p>
+        </S.ReviewItemWrapper>
+      );
+    });
+  }, [reviewList.data]);
 
   useEffect(() => {
-    dispatch(getProductDetailAction({ id }));
+    dispatch(getProductDetailAction({ id: id }));
+    dispatch(getReviewListAction({ productId: id }));
   }, [id]);
 
   const handleAddToCart = (key) => {
@@ -85,11 +188,32 @@ function DetailPage() {
                   </span>
                   {productDetail.data.brand}
                 </S.Brand>
+
+                <Space align="baseline">
+                  <Rate value={averageRate} disabled />
+                  <span>
+                    {`(${
+                      reviewList.data.length
+                        ? `${reviewList.data.length} lượt đánh giá`
+                        : "chưa có lượt đánh giá"
+                    })`}
+                  </span>
+                </Space>
+
                 <S.DetailPrice>
                   <div>{productDetail.data.price?.toLocaleString()} đ</div>
                 </S.DetailPrice>
 
-                <div>
+                <Button
+                  size="large"
+                  danger={isLike}
+                  icon={isLike ? <HeartFilled /> : <HeartOutlined />}
+                  onClick={() => handleToggleFavorite()}
+                >
+                  {productDetail.data?.favorites?.length || 0} liked
+                </Button>
+
+                <div style={{ marginTop: 24 }}>
                   <Row gutter={[16, 16]}>
                     <Col span={12}>
                       <S.Buttom
@@ -160,6 +284,57 @@ function DetailPage() {
           </Col>
         </Row>
       </S.OtherInfoWrapper>
+      <Card
+        title="Bình luận & nhận xét"
+        size="small"
+        bordered={false}
+        style={{ marginTop: 16, width: "100%", maxWidth: 1232 }}
+      >
+        {userInfo.data.id && (
+          <Form
+            form={reviewForm}
+            name="reviewForm"
+            layout="vertical"
+            onFinish={(values) => handleReview(values)}
+            autoComplete="off"
+            style={{ padding: 12, borderRadius: 6, background: "#f0f2f5" }}
+          >
+            <Form.Item
+              label="Rate"
+              name="rate"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your rate!",
+                },
+              ]}
+            >
+              <Rate />
+            </Form.Item>
+            <Form.Item
+              label="Comment"
+              name="comment"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your comment!",
+                },
+              ]}
+            >
+              <Input.TextArea
+                autoSize={{
+                  minRows: 2,
+                  maxRows: 4,
+                }}
+              />
+            </Form.Item>
+            <Button type="primary" htmlType="submit" block>
+              Submit
+            </Button>
+          </Form>
+        )}
+        {renderReviewList}
+      </Card>
     </S.DetailWrapper>
   );
 }

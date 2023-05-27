@@ -100,9 +100,41 @@ function* updateInfoSaga(action) {
   }
 }
 
+function* changePasswordSaga(action) {
+  try {
+    const { id, data, callback } = action.payload;
+    yield axios.post("http://localhost:4000/login", {
+      email: data.email,
+      password: data.password,
+    });
+    const result = yield axios.patch(`http://localhost:4000/users/${id}`, {
+      password: data.newPassword,
+    });
+    callback();
+    notification.success({
+      message: "Đổi mật khẩu thành công",
+      placement: "bottomRight",
+    });
+    yield put({
+      type: SUCCESS(AUTH_ACTION.CHANGE_PASSWORD),
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({
+      type: FAIL(AUTH_ACTION.CHANGE_PASSWORD),
+      payload: {
+        error: "Lỗi!",
+      },
+    });
+  }
+}
+
 export default function* authSaga() {
   yield takeEvery(REQUEST(AUTH_ACTION.LOGIN), loginSaga);
   yield takeEvery(REQUEST(AUTH_ACTION.REGISTER), registerSaga);
   yield takeEvery(REQUEST(AUTH_ACTION.GET_USER_INFO), getUserInfoSaga);
   yield takeEvery(REQUEST(AUTH_ACTION.UPDATE_USER_INFO), updateInfoSaga);
+  yield takeEvery(REQUEST(AUTH_ACTION.CHANGE_PASSWORD), changePasswordSaga);
 }

@@ -2,7 +2,12 @@ import * as S from "./styles";
 import Header from "../Header";
 import Footer from "../Footer";
 import { Outlet } from "react-router-dom";
-import { UserOutlined, FileDoneOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  FileDoneOutlined,
+  KeyOutlined,
+  HeartOutlined,
+} from "@ant-design/icons";
 import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -24,6 +29,16 @@ function AccountLayout(props) {
       title: "Quản Lý Đơn hàng",
       path: ROUTES.ACCOUNT.ODERHISTORY,
       icon: <FileDoneOutlined style={{ fontSize: 18, paddingRight: 8 }} />,
+    },
+    {
+      title: "Đổi mật khẩu",
+      path: ROUTES.ACCOUNT.CHANGEPASSWORD,
+      icon: <KeyOutlined style={{ fontSize: 18, paddingRight: 8 }} />,
+    },
+    {
+      title: "Sản phẩm yêu thích",
+      path: ROUTES.ACCOUNT.FAVORITE,
+      icon: <HeartOutlined style={{ fontSize: 18, paddingRight: 8 }} />,
     },
   ];
 

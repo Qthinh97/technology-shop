@@ -18,6 +18,8 @@ export const ROUTES = {
   ACCOUNT: {
     ACCOUNTINFO: "/account/accountInfo",
     ODERHISTORY: "/account/oderHistory",
+    CHANGEPASSWORD: "/account/changePassword",
+    FAVORITE: "/account/favoriteProducts",
   },
   LOGIN: "/login",
   REGISTER: "/register",

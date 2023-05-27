@@ -14,3 +14,7 @@ export const updateUserInfoAction = createAction(
 export const getUserInfoAction = createAction(
   REQUEST(AUTH_ACTION.GET_USER_INFO)
 );
+
+export const changePasswordAction = createAction(
+  REQUEST(AUTH_ACTION.CHANGE_PASSWORD)
+);

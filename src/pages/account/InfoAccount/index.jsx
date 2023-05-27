@@ -46,7 +46,7 @@ function AccountPage() {
   return (
     <S.AccountWrapper>
       <S.AccountForm>
-        <h2 style={{ margin: "0 0 24px" }}>Thủ tục thanh toán</h2>
+        <h2 style={{ margin: "0 0 24px" }}>Thay dổi thông tin</h2>
         <Form
           name="AccountForm"
           form={AccountForm}
@@ -56,7 +56,7 @@ function AccountPage() {
         >
           <Card
             size="small"
-            title="Thông tin giao hàng"
+            title="Thông tin tài khoản"
             style={{ marginBottom: 24 }}
           >
             <Row gutter={[16, 16]}>

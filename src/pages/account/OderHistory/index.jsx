@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Table, Tag } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import * as S from "./styles";
 import moment from "moment";
 
 import { getOrderList } from "../../../redux/action";
@@ -76,12 +77,15 @@ const OrderHistories = () => {
         expandedRowRender: (record) => (
           <ul>
             {record.orderDetails.map((item) => (
-              <li key={item.id}>
-                {item.name}
-                {` - ${item.price}`}
-                {` - ${item.quantity}`}
-                {` - ${item.price * item.quantity}`}
-              </li>
+              <div key={item.id}>
+                <S.ProductItem key={item.id}>
+                  <S.ImgProduct alt="logo" src={item.img} />
+                  <S.NameProduct>{item.name}</S.NameProduct>
+                  <S.PriceProduct>
+                    {item.price.toLocaleString()}₫
+                  </S.PriceProduct>
+                </S.ProductItem>
+              </div>
             ))}
           </ul>
         ),

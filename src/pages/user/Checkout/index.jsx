@@ -41,6 +41,7 @@ function CheckoutPage() {
     (state) => state.location
   );
   const { cartList } = useSelector((state) => state.cart);
+  console.log("🚀 ~ file: index.jsx:44 ~ CheckoutPage ~ cartList:", cartList);
   const { userInfo } = useSelector((state) => state.auth);
 
   const initialValues = {};

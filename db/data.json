@@ -2,12 +2,12 @@
   "users": [
     {
       "email": "thinhadmin@gmail.com",
-      "password": "$2a$10$ANquBCJBJzZ9N8KeG7WkVuH.0nvD0cLSK92WVw4JFgYwuoQ5aocqK",
+      "password": "$2a$10$18BOHDOZSPxfV2erKVa5cexjCNRR8mkJPFisP0C.7xckJSlQi0ROK",
       "name": "thinhadmin",
       "phoneNumber": "0357734848",
       "role": "admin",
       "createdAt": 1684394217932,
-      "updatedAt": 1684920986143,
+      "updatedAt": 1685095455919,
       "id": 1,
       "location": {
         "cityName": "Thành phố Đà Nẵng",
@@ -28,9 +28,19 @@
       "createdAt": 1684394264670,
       "updatedAt": 1684394264671,
       "id": 2
+    },
+    {
+      "email": "thinh123@gmail.com",
+      "password": "$2a$10$ijNKbu4LYmsyye2wRkQ5H.wE.QpTdIyBOefNZXGsvH3x1puJqG/Ma",
+      "name": "thinh345",
+      "phoneNumber": "0357734747",
+      "role": "user",
+      "createdAt": 1685154465638,
+      "updatedAt": 1685154949221,
+      "id": 3,
+      "address": "91 to huu"
     }
   ],
-  "userInfo": [],
   "products": [
     {
       "name": "CPU INTEL Core i9-13900K (24C/32T, 3 GHz - 5.8 GHz, 36MB) - 1700",
@@ -1295,6 +1305,60 @@
       }
     }
   ],
+  "reviews": [
+    {
+      "rate": 4,
+      "comment": "asdasad",
+      "userId": 2,
+      "productId": 1,
+      "createdAt": 1685097005189,
+      "updatedAt": 1685097005191,
+      "id": 1
+    },
+    {
+      "rate": 3,
+      "comment": "erewr\n",
+      "userId": 2,
+      "productId": 1,
+      "createdAt": 1685098722597,
+      "updatedAt": 1685098722597,
+      "id": 2
+    },
+    {
+      "rate": 5,
+      "comment": "hay",
+      "userId": 1,
+      "productId": 1,
+      "createdAt": 1685099951244,
+      "updatedAt": 1685099951244,
+      "id": 3
+    },
+    {
+      "rate": 4,
+      "comment": "123123",
+      "userId": 3,
+      "productId": 20,
+      "createdAt": 1685154597613,
+      "updatedAt": 1685154597613,
+      "id": 4
+    }
+  ],
+  "favorites": [
+    {
+      "productId": 1,
+      "userId": 2,
+      "createdAt": 1685106297051,
+      "updatedAt": 1685106297051,
+      "id": 1
+    },
+    {
+      "productId": 2,
+      "userId": 3,
+      "createdAt": 1685155141759,
+      "updatedAt": 1685155141759,
+      "id": 2
+    }
+  ],
   "categories": [
     {
       "id": "CPU",
@@ -1655,21 +1719,6 @@
       "categoryId": "HDD"
     },
     {
-      "id": "256GB",
-      "name": "256GB",
-      "categoryId": "SDD"
-    },
-    {
-      "id": "500GB",
-      "name": "500GB",
-      "categoryId": "SDD"
-    },
-    {
-      "id": "512GB",
-      "name": "512GB",
-      "categoryId": "SDD"
-    },
-    {
       "id": "1TB",
       "name": "1TB",
       "categoryId": "SSD"
@@ -1860,40 +1909,115 @@
       "fullName": "Thịnh",
       "email": "Quocthinh8712@gmail.com",
       "phoneNumber": "1657734848",
-      "cityCode": "48",
-      "districtCode": "494",
-      "wardCode": "20284",
+      "cityCode": "01",
+      "districtCode": "019",
+      "wardCode": "00617",
       "address": "91 Cù Chính Lan",
-      "paymentMethod": "atm",
-      "cityName": "Thành phố Đà Nẵng",
-      "districtName": "Quận Ngũ Hành Sơn",
-      "wardName": "Phường Mỹ An",
-      "userId": 2,
-      "totalPrice": 23189000,
+      "paymentMethod": "cod",
+      "cityName": "Thành phố Hà Nội",
+      "districtName": "Quận Bắc Từ Liêm",
+      "wardName": "Phường Cổ Nhuế 2",
+      "userId": 1,
+      "totalPrice": 15990000,
       "status": "pending",
-      "createdAt": 1684574190205,
-      "updatedAt": 1684574190205,
+      "createdAt": 1685091723321,
+      "updatedAt": 1685091723322,
       "id": 1
+    },
+    {
+      "fullName": "thinh",
+      "email": "Quocthinh8712@gmail.com",
+      "phoneNumber": "1657734848",
+      "cityCode": "79",
+      "districtCode": "772",
+      "wardCode": "27250",
+      "address": "91 Cù Chính Lan",
+      "paymentMethod": "cod",
+      "cityName": "Thành phố Hồ Chí Minh",
+      "districtName": "Quận 11",
+      "wardName": "Phường 02",
+      "userId": 1,
+      "totalPrice": 81980000,
+      "status": "pending",
+      "createdAt": 1685091758614,
+      "updatedAt": 1685091758614,
+      "id": 2
+    },
+    {
+      "fullName": "Thịnh",
+      "email": "Quocthinh8712@gmail.com",
+      "phoneNumber": "1657734848",
+      "cityCode": "48",
+      "districtCode": "491",
+      "wardCode": "20224",
+      "address": "91 Cù Chính Lan",
+      "paymentMethod": "cod",
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Thanh Khê",
+      "wardName": "Phường An Khê",
+      "userId": 3,
+      "totalPrice": 779000,
+      "status": "pending",
+      "createdAt": 1685154859951,
+      "updatedAt": 1685154859952,
+      "id": 3
     }
   ],
   "orderDetails": [
     {
       "orderId": 1,
       "productId": 1,
+      "img": "https://lh3.googleusercontent.com/8ZgtSFfvzhSbOiKX7EQ69kQbzdzklyA3gE3F9qv3oloqqaqjCs9iX1li7ZIq7wHSyctbZLdjpAfCjJAiEzLy-arb-dPcAmY4KA=w500-rw",
+      "name": "CPU INTEL Core i9-13900K (24C/32T, 3 GHz - 5.8 GHz, 36MB) - 1700",
       "price": 15990000,
       "quantity": 1,
-      "createdAt": 1684574190284,
-      "updatedAt": 1684574190284,
+      "createdAt": 1685091723450,
+      "updatedAt": 1685091723450,
       "id": 1
     },
     {
-      "orderId": 1,
-      "productId": 2,
-      "price": 7199000,
+      "orderId": 2,
+      "productId": 27,
+      "img": "https://lh3.googleusercontent.com/n1Y05kuaylYDQ56w_h-LDrlmwmfSRKXCXU0QJR8MyRO8uGJ4KQU0wbxUSV5--BQihhpAn0AVqC_rFg4uRSbE4GElczCEDTMqnA=w500-rw",
+      "name": "Card màn hình GIGABYTE AORUS GeForce RTX 4080 16GB MASTER 16GB GDDR6X N4080AORUS M-16GD",
+      "price": 45590000,
       "quantity": 1,
-      "createdAt": 1684574190354,
-      "updatedAt": 1684574190354,
+      "createdAt": 1685091758779,
+      "updatedAt": 1685091758779,
       "id": 2
+    },
+    {
+      "orderId": 2,
+      "productId": 21,
+      "img": "https://lh3.googleusercontent.com/Wiu2DWLrlZUbr27uPPN1eNZOJ_LdSCpp8lrkSxakEDgZkrmCiB9IwsuEcKUTdXlGwKLNV42i4nId81UIpw4=w500-rw",
+      "name": "Mainboard MSI MEG Z490 GODLIKE",
+      "price": 20400000,
+      "quantity": 1,
+      "createdAt": 1685091758901,
+      "updatedAt": 1685091758902,
+      "id": 3
+    },
+    {
+      "orderId": 2,
+      "productId": 1,
+      "img": "https://lh3.googleusercontent.com/8ZgtSFfvzhSbOiKX7EQ69kQbzdzklyA3gE3F9qv3oloqqaqjCs9iX1li7ZIq7wHSyctbZLdjpAfCjJAiEzLy-arb-dPcAmY4KA=w500-rw",
+      "name": "CPU INTEL Core i9-13900K (24C/32T, 3 GHz - 5.8 GHz, 36MB) - 1700",
+      "price": 15990000,
+      "quantity": 1,
+      "createdAt": 1685091758988,
+      "updatedAt": 1685091758988,
+      "id": 4
+    },
+    {
+      "orderId": 3,
+      "productId": 42,
+      "img": "https://lh3.googleusercontent.com/2RhuJbPfhwcMTuFG7oM86O5u3zYEFNFR8KzzwwI1aaVGsdrONSR3dYZ6D8StXHxepZ43k8ue7JFg7us1OF9PY_EYDQP2qm3F=w500-rw",
+      "name": "RAM desktop ADATA XPG D50 DDR4 8GB 3200 RGB Grey (1 x 8GB) DDR4 3200MHz (AX4U32008G16A-ST50)",
+      "price": 669000,
+      "quantity": 1,
+      "createdAt": 1685154860057,
+      "updatedAt": 1685154860057,
+      "id": 5
     }
   ],
   "cities": [

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button, Col, Row } from "antd";
+import { Link } from "react-router-dom";
 
 export const BuildPCWrapper = styled.div`
   margin-top: 100px;
@@ -74,11 +75,13 @@ export const InforItem = styled(Col)`
   margin: 0 8px;
 `;
 
-export const NameInfoItem = styled(Col)`
+export const NameInfoItem = styled(Link)`
   text-align: start;
   font-size: 14px;
   width: 100%;
   max-width: 240px;
+  color: #000;
+  text-decoration: none;
 `;
 
 export const PriceItem = styled.h3`
@@ -133,7 +136,6 @@ export const ModalProductList = styled.div`
   height: 450px;
   overflow: auto;
 `;
-
 export const ProductItem = styled.div`
   display: flex;
   align-items: center;
@@ -150,11 +152,13 @@ export const ImgProduct = styled.img`
   border-radius: 4px;
 `;
 
-export const NameProduct = styled.div`
+export const NameProduct = styled(Link)`
   max-width: 400px;
   width: 100%;
   text-align: start;
   margin-right: 16px;
+  color: #000;
+  text-decoration: none;
 `;
 
 export const PriceProduct = styled.div`

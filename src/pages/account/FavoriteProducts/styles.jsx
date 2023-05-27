@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const AccountWrapper = styled.div`
@@ -9,6 +10,7 @@ export const ProductItem = styled.div`
   align-items: center;
   justify-content: start;
   padding: 10px 16px;
+  background-color: #fff;
 `;
 
 export const ImgProduct = styled.img`
@@ -18,11 +20,13 @@ export const ImgProduct = styled.img`
   border-radius: 4px;
 `;
 
-export const NameProduct = styled.div`
+export const NameProduct = styled(Link)`
   max-width: 400px;
   width: 100%;
   text-align: start;
   margin-right: 16px;
+  color: #000;
+  text-decoration: none;
 `;
 
 export const PriceProduct = styled.div`

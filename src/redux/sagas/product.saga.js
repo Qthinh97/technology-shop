@@ -84,7 +84,12 @@ function* getProductDetailSaga(action) {
   try {
     const { id } = action.payload;
 
-    const result = yield axios.get(`http://localhost:4000/products/${id}`, {});
+    const result = yield axios.get(`http://localhost:4000/products/${id}`, {
+      params: {
+        _expand: "category",
+        _embed: "favorites",
+      },
+    });
     yield put({
       type: SUCCESS(PRODUCT_ACTION.GET_PRODUCT_DETAIL),
       payload: {
@@ -106,12 +111,6 @@ function* createProductSaga(action) {
   try {
     const { data, callback } = action.payload;
     const result = yield axios.post("http://localhost:4000/products", data);
-    // for (let i = 0; i < images.length; i++) {
-    //   yield axios.post("http://localhost:4000/images", {
-    //     ...images[i],
-    //     productId: result.data.id,
-    //   });
-    // }
     yield callback();
     yield put({
       type: SUCCESS(PRODUCT_ACTION.CREATE_PRODUCT),
